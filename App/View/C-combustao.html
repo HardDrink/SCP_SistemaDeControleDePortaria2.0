@@ -1,0 +1,283 @@
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Controle Diário de Equipamento - Combustão</h5>
+        <br>
+            <form method="post" action="?pagina=c_combustao&metodo=insert">
+
+                <div class="form-group row">
+                    <label for="fname"class="col-md-2 text-end control-label col-form-label">Turno: </label>
+                        <div class="col-lg-3">
+                            <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                    <option value="0">Escolha o Turno...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                            </select>
+                        </div>
+                        <label class="col-md-1"></label>
+                            <label for="fname"class="col-md-1 text-end control-label col-form-label">Data:</label>
+                                <div class="col-lg-3">
+                                    <input type="date" style="margin-left: 10px;" name="data" class="form-control" id="datepicker-autoclose">
+                                </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
+                        <div class="col-lg-3">
+                            <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                    <option value="0">Escolha um Equipamento...</option>
+                                    {% for empi in empi %}
+                                    <option value='{{empi.nome_emp}}'>{{empi.nome_emp}}</option>
+                                    {% endfor %}
+                            </select>
+                        </div>
+                        <label class="col-md-1"></label>
+                            <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
+                        <div class="col-lg-3">
+                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <option value="0">Escolha um Operador...</option>
+                                {% for opera in opera %}
+                                <option value='{{opera.nome}}'>{{opera.nome}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fname"class="col-md-3 text-end control-label col-form-label">Horímetro Inícial</label>
+                        <div class="col-sm-2">
+                            <input name="hori_inicio" style="margin-left: 10px;" type="text" class="form-control" id="hori_inicio" placeholder="">
+                        </div>
+                            <label for="fname" class="col-md-3 text-end control-label col-form-label">Horímetro Final</label>
+                        <div class="col-sm-2">
+                            <input name="hori_final" style="margin-left: 10px;" type="text" class="form-control" id="hori_final" placeholder="">
+                        </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário inicial do Trabalho</label>
+                        <div class="col-sm-2">
+                            <input name="inicio" style="margin-left: 10px;" type="time" class="form-control" id="inicio" placeholder="">
+                        </div>
+                            <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário Final do Trabalho</label>
+                        <div class="col-sm-2">
+                            <input name="final" style="margin-left: 10px;" type="time" class="form-control" id="final" placeholder="">
+                        </div>
+                </div>
+
+                    <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Horímetro Abastecimento</label>
+                            <div class="col-sm-2">
+                                <input name="hori_abastecimento" style="margin-left: 10px;" type="text" class="form-control" id="hori_abastecimento" placeholder="">
+                            </div>
+                                <label for="fname" class="col-md-3 text-end control-label col-form-label">Quantidade</label>
+                            <div class="col-sm-2">
+                                <input name="quantidade" style="margin-left: 10px;" type="text" class="form-control" id="quantidade" placeholder="">
+                            </div>
+                    </div>
+    </div>
+</div>
+
+    <div class="card">
+        <div class="card-body">
+                    <div class="form-group row">
+                        <h5 style="text-align: center;">Verificar os Itens Abaixo Por Favor:</h5>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Hidráulico: </label>
+                            <div class="col-lg-3">
+                                <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                        <option value='Baixo'>Baixo</option>
+                                </select>
+                            </div>
+                                <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Motor:</label>
+                            <div class="col-lg-3">
+                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                        <option value='Baixo'>Baixo</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Transmissão: </label>
+                            <div class="col-lg-3">
+                                <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                        <option value='Baixo'>Baixo</option>
+                                </select>
+                            </div>
+                                <label for="fname"class="col-md-2 text-end control-label col-form-label">Água do Radiador:</label>
+                            <div class="col-lg-3">
+                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                        <option value='Baixo'>Baixo</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname"class="col-md-2 text-end control-label col-form-label">Freios: </label>
+                            <div class="col-lg-3">
+                                <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                        <option value='Baixo'>Falhando</option>
+                                </select>
+                            </div>
+                                <label for="fname"class="col-md-2 text-end control-label col-form-label">Mangueiras:</label>
+                            <div class="col-lg-3">
+                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Opção...</option>
+                                        <option value='OK'>OK</option>
+                                        <option value='Vazando'>Vazando</option>
+                                </select>
+                            </div>
+                    </div>
+    </div>
+</div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group row">
+                    <h5 style="text-align: center;">Pneus: </h5>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Dianteiro Esquerdo: </label>
+                        <div class="col-lg-3">
+                            <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <option value="0">Escolha uma Opção...</option>
+                                <option value='OK'>OK</option>
+                                <option value='Com Corte'>Com Corte</option>
+                                <option value='Rachada'>Rachado</option>
+                                <option value='Trepidando'>Trepidando</option>
+                            </select>
+                        </div>
+                            <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Dianteiro Direito:</label>
+                        <div class="col-lg-3">
+                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <option value="0">Escolha uma Opção...</option>
+                                <option value='OK'>OK</option>
+                                <option value='Com Corte'>Com Corte</option>
+                                <option value='Rachada'>Rachado</option>
+                                <option value='Trepidando'>Trepidando</option>
+                            </select>
+                        </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Traseiro Esquerdo:</label>
+                        <div class="col-lg-3">
+                            <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <option value="0">Escolha uma Opção...</option>
+                                <option value='OK'>OK</option>
+                                <option value='Com Corte'>Com Corte</option>
+                                <option value='Rachada'>Rachado</option>
+                                <option value='Trepidando'>Trepidando</option>
+                            </select>
+                        </div>
+                            <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Traseiro Direito:</label>
+                        <div class="col-lg-3">
+                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                    <option value="0">Escolha uma Opção...</option>
+                                    <option value='OK'>OK</option>
+                                    <option value='Com Corte'>Com Corte</option>
+                                    <option value='Rachada'>Rachado</option>
+                                    <option value='Trepidando'>Trepidando</option>
+                            </select>
+                        </div>
+                </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-4">Condições Gerais de Limpeza (Garfos, Grades e tec...):</label>
+                            <div class="col-sm-6">
+                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                    <option value="0">Escolha uma Opção...</option>
+                                    <option value='Limpo'>Limpo</option>
+                                    <option value='Sujo'>Sujo</option>
+                                    <option value='Sim'>Sim</option>
+                                    <option value='Não'>Não</option>
+                                </select>
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for=""style="margin-top: 8px;" class="col-sm-3 text-end control-label col-form-label">Registrar Anormalidades:</label>
+                            <div class="col-sm-9">
+                                <textarea name="anormalidades" style="margin-left: 10px;" class="form-control"></textarea>
+                            </div>
+                    </div>
+    </div>
+</div> 
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div class="form-group row">
+                        <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
+                    </div>
+
+                    <div class="form-group row">
+                            <label for="fname" class="col-md-3 text-end control-label col-form-label">Ordem de Serviço Nº:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" class="form-control" id="ordem_servico" placeholder="" name="ordem_servico">
+                                </div>
+                            <label for="fname" class="col-md-3 text-end control-label col-form-label">Horimetro:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="horimetro" class="form-control" id="horimetro" placeholder="">
+                                </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Descrição do Problema: </label>
+                            <div class="col-sm-9">
+                                <input type="text" style="margin-left: 10px;" name="problema" class="form-control" id="problema" placeholder="">
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Serviços Executados: </label>
+                            <div class="col-sm-9">
+                                <input type="text" style="margin-left: 10px;" name="servicos" class="form-control" id="servicos" placeholder="">
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Descrição: </label>
+                            <div class="col-sm-9">
+                                <input type="text" style="margin-left: 10px;" name="descricao" class="form-control" id="descricao" placeholder="">
+                            </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Atendimento Inicial:</label>
+                            <div class="col-sm-3">
+                                <input type="text" style="margin-left: 10px;" name="at_inicial" class="form-control" id="at_inicial" placeholder="">
+                            </div>
+                        <label for="fname"class="col-md-3 text-end control-label col-form-label">Atendimento Final: </label>
+                            <div class="col-sm-3">
+                                <input type="text" style="margin-left: 10px;" name="at_final" class="form-control" id="at_final" placeholder="">
+                            </div>
+                    </div>
+
+            </div>
+            
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+    </form>
+</div>

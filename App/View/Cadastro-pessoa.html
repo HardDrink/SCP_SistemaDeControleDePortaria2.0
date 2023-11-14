@@ -1,0 +1,45 @@
+<div class="card">
+    <form method="post" action="?pagina=cadastropessoa&metodo=insert">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">Cadastrar Pessoas:</h5>
+                        <br>
+
+                        <div class="form-group row" style="text-align: center;">
+                            <h5>Por favor insira os Dados Abaixo (os campos com * são o obrigatorios):</h5>
+                            <h5>Digitar apenas os Números sem . , ou -:</h5>
+                        </div>
+
+                        <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Nome: *</label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="nome" class="form-control" id="nome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">CPF: *</label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="cpf" maxlength="11" class="form-control" id="cpf" required>
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">RG: *</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="rg" maxlength="11" class="form-control" id="rg" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">CNH: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="cnh" maxlength="10" class="form-control" id="cnh">
+                                    <input type="hidden" style="margin-left: 10px;" name="ativo" value="1">
+                                </div>
+                            </div>
+                    </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" style="margin-left: 10px;" class="btn btn-primary">Cadastrar</button>
+                            </div>
+                        </div>
+    </form>
+</div>

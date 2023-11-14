@@ -1,0 +1,163 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Entrada Visitantes:</h5>
+        <br>
+        
+        <div class="form-group row" style="text-align: center;">
+            <h5>Preencha os dados do Visitante:</h5>
+            <h5>Campos Com * São Obrigatórios:</h5>
+            <h5 style="color: red;">Proibida Entrada de Visitantes Usando Shorts e Chinelo:</h5>
+        </div>
+        <form action="?pagina=entradavisita&metodo=buscar">
+            <div class="form-group row">
+                <label class="col-md-2 text-end control-label col-form-label">CPF: </label>
+                    <div class="col-sm-3">
+                        <input type="text" name="cpf" maxlength="11" style="margin-left: 10px;" value='' class="form-control" id="cpf" placeholder="Insira o CPF...">
+                        <div class="card-body">
+                            <button type="submit" name="verifica" style="margin-left:30px" class="btn btn-primary">Buscar Visitante</button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+                
+                <form method="post" action="?pagina=entradavisita&metodo=insert">
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Nome: </label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="nome" value="" class="form-control" id="nome">
+                                    <input type='hidden' name='entrada' value='' />
+                                    <input type='hidden' name='id_pessoa' value=''/>
+                                    <input type='hidden' name='ativo' value=''/>
+                                    <input type='hidden' name='cp1' value=''/>
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">RG: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="rg" value="" class="form-control" id="rg">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">CNH: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="cnh" value="" class="form-control" id="cnh">
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Data Validade CNH: </label>
+                                    <div class="col-sm-3">
+                                    <input type="date" name="nasc" style="margin-left: 10px;" class="form-control" id="nasc">
+                                </div>
+                            </div>-->
+
+                            <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Placa Cavalo: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" name="placa_cavalo" style="margin-left: 10px;" maxlength="10" class="form-control" id="placa1" placeholder="Informe a Placa...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                        <label for="fname"
+                                    class="col-md-2 text-end control-label col-form-label">Placa Carreta 1: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" name="placa_1" style="margin-left: 10px;" maxlength="10" class="form-control" id="placa2" placeholder="Informe a Placa...">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                        <label for="fname"
+                                    class="col-md-2 text-end control-label col-form-label">Placa Carreta 2: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="placa_2" maxlength="10" class="form-control" id="placa3" placeholder="Informe a Placa...">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Veiculo: </label>
+                                    <div class="col-sm-3">
+                                    <select name="veiculo" id="tipo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="Sem Veiculo">Sem Veiculo</option>
+                                        <option value="Moto">Moto</option>
+                                        <option value="Carro De Passeio">Carro De Passeio</option>
+                                        <option value="Utilitario">Utilitario</option>
+                                        <option value="Caminhão Baú">Caminhão Baú</option>
+                                        <option value="Caminhão Graneleiro">Caminhão Graneleiro</option>
+                                        <option value="Caminhão Tanque">Caminhão Tanque</option>
+                                        <option value="Caminhão Rollon">Caminhão Rollon</option>
+                                        <option value="Caminhão Poli Caçamba">Caminhão Poli Caçamba</option>
+                                        <option value="Caminhão / Container">Caminhão / Container</option>
+                                        <option value="Caminhão Truck" >Caminhão Truck</option>
+                                        
+                                </select>
+                            </div>
+                        </div>
+
+                                <div class="form-group row">
+                            <label class="col-md-2 text-end control-label col-form-label">Setor: *</label>
+                                        <div class="col-sm-3">
+                                        <select name="setor" id="setor" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                            <option value="...">Escolha Um Setor</option>
+                                            <option value="Administrativo">Administrativo</option>
+                                            <option value="Operacional">Operacional</option>
+                                            <option value="Neolubes">Neolubes</option>
+                                            <option value="Pátio">Pátio</option>
+                                            <option value="Refeitório">Refeitório</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Empresa: </label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="empresa" class="form-control" id="empresa" placeholder="Informe a Empresa...">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Cliente: </label>
+                                <div class="col-sm-3">
+                                <select name="visitado" id="cliente" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                            <option value="0"             >Nenhum</option>
+                                            <option value="Neolubes"      >Neolubes</option>
+                                            <option value="GreenYellow"   >GreenYellow</option>
+                                            <option value="RGD"           >RGD</option>
+                                            <option value="EBES"          >EBES</option>
+                                            <option value="COMEXPORT"     >COMEXPORT</option>
+                                            <option value="HELIO-VALGAS"  >HELIO VALGAS</option>
+                                            <option value="VIAR-PAINEIS"  >VIAR PAINEIS</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        
+                        <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Operação: </label>
+                                    <div class="col-sm-3">
+                                    <select name="operacao" id="operacao" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                        <option value="0">Escolha uma Operação</option>
+                                        <option value="Carregamento">Carregamento</option>
+                                        <option value="Descarregamento">Descarregamento</option>
+                                        <option value="Carregamento e Descarregamento">Descarregamento e Carregamento</option>
+                                        <option value="Visita">Visita</option>
+                                        <option value="Entrevista">Entrevista</option>
+                                        <option value="Troca de Nota">Troca de Nota</option>
+                                        <option value="Entrega de alimentos">Entrega De Alimentos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Observação: </label>
+                                    <div class="col-sm-9">
+                                    <textarea name="observacao" style="margin-left: 10px;" id="observacao" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            </div>
+                    <div class="border-top">
+                        <div class="card-body">
+                                <button type='submit' class='btn btn-primary'>Realizar Entrada</button>
+                            </div>
+
+                    </div>
+                </form>
+            </div>

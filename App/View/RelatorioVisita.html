@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Criar Relátorio De Visitantes</h5>
+            <br>
+                <form action="relatorio-visitaativa.php" method="post" target="_blank">
+                    <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Data Inicial: </label>
+                        <div class="col-sm-3">
+                            <input style="margin-left: 10px;" type="date" name="data_inicio" value="" class="form-control" id="">
+                        </div>
+                        <label class="col-md-2 text-end control-label col-form-label">Data Final: </label>
+                        <div class="col-sm-3">
+                            <input style="margin-left: 10px;" type="date" name="data_final" value="" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">Setor: </label>
+                        <div class="col-lg-3">
+                            <select name="setor" id="setor" class="select2 form-select shadow-none" style="margin-left: 10px;width: 100%; height:36px;">
+                                    <option value="0">Todos</option>
+                                    <option value="Administrativo">Administrativo</option>
+                                    <option value="Operacional">Operacional</option>
+                                    <option value="Neolubes">Neolubes</option>
+                                    <option value="Pátio">Pátio</option>
+                                    <option value="Refeitório">Refeitório</option>
+                            </select>
+                        </div>
+                    </div>
+                <div class="border-top">
+                    <div class="card-body">
+                    <button type="submit" name="criar" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>

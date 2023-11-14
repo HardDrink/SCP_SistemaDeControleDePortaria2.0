@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Visitantes Ativos</h5>
+        <div class="table-responsive">
+            <table id="" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                    <th>Entrada</th>
+                    <th>Nome</th>
+                    <th>Empresa</th>
+                    <th>Cliente</th>
+                    <th>Placa</th>
+                    <th>Setor</th>
+                    <th>Observação</th>
+                    <th>Editar</th>
+                    <th>Saída</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ativo in ativo %}
+                    <tr>
+                    <td>{{ativo.entrada}}</td>
+                    <td>{{ativo.nome_visita}}</td>
+                    <td>{{ativo.empresa}}</td>
+                    <td>{{ativo.visitado}}</td>
+                    <td>{{ativo.placa_cavalo}}</td>
+                    <td>{{ativo.setor}}</td>
+                    <td>{{ativo.observacao}}</td>
+                    <form onSubmit=mSg() action='' method='post'>
+
+                    <input type='hidden' name='id_visita' value='' />
+                    <td><a href='visitaativa-edit.php?id_visita={id_visita}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
+                    
+                    <td><button onclick='msg()' type='submit' class='btn btn-primary' id='' name='enviar'>Saída</button></form></td>
+                    </tr>  
+                    {% endfor %}                                  
+                </tbody>
+                <script>
+                    function msg()
+                    {
+                    alert("Saída Feita Com Sucesso!");
+                    }
+                </script>
+            </table>
+        </div>
+
+    </div>
+</div>

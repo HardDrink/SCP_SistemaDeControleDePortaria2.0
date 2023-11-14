@@ -1,0 +1,390 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Controle Diário de Equipamento - Grande Porte</h5>
+        <br>
+<form method="post">
+        <div class="form-group row">
+        <label for="fname"class="col-md-2 text-end control-label col-form-label">Turno: </label>
+            <div class="col-lg-3">
+                <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                    <option value="0">Escolha o Turno...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        
+                </select>
+            </div>
+            <label class="col-md-1"></label>
+            <label for="fname"class="col-md-1 text-end control-label col-form-label">Data:</label>
+            <div class="col-lg-3">
+            <input type="date" style="margin-left: 10px;" name="data" class="form-control" id="datepicker-autoclose">
+            
+            </div>
+        </div>
+
+        <div class="form-group row">
+        <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
+            <div class="col-lg-3">
+                <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                    <option value="0">Escolha um Equipamento...</option>
+                        <option value=''></option>
+                </select>
+            </div>
+            <label class="col-md-1"></label>
+            <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
+            <div class="col-lg-3">
+                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                    <option value="0">Escolha um Operador...</option>
+                        <option value=''></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+                <label for="fname"class="col-md-2 text-end control-label col-form-label">Horímetro Inícial</label>
+                <div class="col-sm-3">
+                    <input name="hori_inicio" type="text" class="form-control" id="hori_inicio" style="margin-left: 10px;" placeholder="">
+                </div>
+                <label for="fname"
+                    class="col-md-2 text-end control-label col-form-label">Horímetro Final</label>
+                <div class="col-sm-3">
+                    <input name="hori_final" type="text" class="form-control" id="hori_final" style="margin-left: 10px;" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                    class="col-md-2 text-end control-label col-form-label">Horário inicial do Trabalho</label>
+                <div class="col-sm-3">
+                    <input name="inicio" type="datetime-local" class="form-control" id="inicio" style="margin-left: 10px;" placeholder="">
+                </div>
+                <label for="fname"
+                    class="col-md-2 text-end control-label col-form-label">Horário Final do Trabalho</label>
+                <div class="col-sm-3">
+                    <input name="final" type="datetime-local" class="form-control" id="final" style="margin-left: 10px;" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                    class="col-md-2 text-end control-label col-form-label">Horímetro Abastecimento</label>
+                <div class="col-sm-3">
+                    <input name="hori_abastecimento" type="text" class="form-control" id="hori_abastecimento" style="margin-left: 10px;" placeholder="">
+                </div>
+                <label for="fname"
+                    class="col-md-2 text-end control-label col-form-label">Quantidade</label>
+                <div class="col-sm-3">
+                    <input name="quantidade" type="text" class="form-control" id="quantidade" style="margin-left: 10px;" placeholder="">
+                </div>
+            </div>
+
+                <div class="form-group row">
+                    <div class="col-md-9"></div>
+                </div>
+
+            <div class="form-group row">
+                <h5 style="text-align: center;">Verificar os Itens Abaixo Por Favor(Marcar Apenas um De Cada Tipo!):</h5>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3">Óleo Hidráulico:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" 
+                            id="hidraulico" name="hidraulico1">
+                        <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="hidraulico" name="hidraulico2">
+                        <label class="form-check-label mb-0">Vazando</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="hidraulico" name="hidraulico3">
+                        <label class="form-check-label mb-0">Baixo</label>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3">Óleo do Motor:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox"  class="form-check-input"
+                            id="oleo" name="oleo1">
+                            <label class="form-check-label mb-0" >OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="oleo" name="oleo2" >
+                        <label class="form-check-label mb-0" >Vazando</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="oleo"  name="oleo3" >
+                        <label class="form-check-label mb-0" >Baixo</label>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3">Óleo Transmissão:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox"  class="form-check-input"
+                            id="transmissao" name="transmissao1">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="transmissao" name="transmissao2">
+                        <label class="form-check-label mb-0">Vazando</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="transmissao" name="transmissao3">
+                        <label class="form-check-label mb-0">Baixo</label>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3">Água do Radiador:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox"  class="form-check-input"
+                            id="agua" name="agua1">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="agua" name="agua2">
+                        <label class="form-check-label mb-0">Vazando</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="agua" name="agua3">
+                        <label class="form-check-label mb-0">Baixo</label>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-3">Freios: </label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input"
+                            id="freio" name="freio1">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="freio" name="freio2">
+                        <label class="form-check-label mb-0">Vazando</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="freio" name="freio3">
+                        <label class="form-check-label mb-0" style="margin-top: 2px;">Falhando</label>
+                            
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+            <label class="col-md-3">Mangueiras:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input"
+                            id="mangueira" name="mangueira1">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="mangueira" name="mangueira2">
+                        <label class="form-check-label mb-0">Vazando</label>
+                    </div>
+                </div>
+            </div>
+
+        <div class="form-group row">
+            <h5 style="text-align: center;">Pneus: </h5>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-4">Pneu Dianteiro Esquerdo Externo:</label>
+            <div class="col-sm-8">
+                <div class="form-check-inline">
+                    <input type="checkbox" class="form-check-input" 
+                        id="desquerdoe" name="desquerdoe0">
+                    <label class="form-check-label mb-0">OK</label>
+                        <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                        id="desquerdoe" name="desquerdoe1">
+                    <label class="form-check-label mb-0">Gasto</label>
+                        <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                        id="desquerdoe" name="desquerdoe2">
+                    <label class="form-check-label mb-0">Rachado</label>
+                    <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                        id="desquerdoe" name="desquerdoe3">
+                    <label class="form-check-label mb-0">Deformado</label>
+                </div>
+            </div>
+        </div>   
+
+            <div class="form-group row">
+                <label class="col-md-4">Pneu Dianteiro Esquerdo Interno:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="desquerdoi" name="desquerdoi0">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="desquerdoi" name="desquerdoi1">
+                        <label class="form-check-label mb-0">Gasto</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="desquerdoi" name="desquerdoi2">
+                        <label class="form-check-label mb-0">Rachado</label>
+                        <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="desquerdoi" name="desquerdoi3">
+                        <label class="form-check-label mb-0">Deformado</label>
+                    </div>
+                </div>
+            </div>   
+
+            <div class="form-group row">
+                <label class="col-md-4">Pneu Dianteiro Direito Externo:</label>
+                    <div class="col-sm-8">
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="ddireitoe" name="ddireitoe0">
+                                <label class="form-check-label mb-0" for="customControlValidation1">OK</label>
+                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoe" name="ddireitoe1">
+                            <label class="form-check-label mb-0" for="customControlValidation1">Gasto</label>
+                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoe" name="ddireitoe2">
+                            <label class="form-check-label mb-0" for="customControlValidation1">Rachado</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoe" name="ddireitoe3">
+                            <label class="form-check-label mb-0" for="customControlValidation1">Deformado</label>
+                        </div>
+                    </div>
+            </div>   
+
+            <div class="form-group row">
+                <label class="col-md-4">Pneu Dianteiro Direito Interno :</label>
+                    <div class="col-sm-8">
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="ddireitoi" name="ddireitoi0">
+                                <label class="form-check-label mb-0">OK</label>
+                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoi" name="ddireitoi1">
+                            <label class="form-check-label mb-0">Gasto</label>
+                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoi" name="ddireitoi2">
+                            <label class="form-check-label mb-0">Rachado</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                                id="ddireitoi" name="ddireitoi3">
+                            <label class="form-check-label mb-0">Deformado</label>
+                        </div>
+                    </div>
+            </div>   
+
+            <div class="form-group row">
+            <label class="col-md-4">Pneu Traseiro Esquerdo:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="tesquerdo" name="tesquerdo0">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tesquerdo" name="tesquerdo1">
+                        <label class="form-check-label mb-0">Gasto</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tesquerdo" name="tesquerdo2">
+                        <label class="form-check-label mb-0">Rachado</label>
+                        <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tesquerdo" name="tesquerdo3">
+                        <label class="form-check-label mb-0">Deformado</label>
+                    </div>
+                </div>
+            </div>   
+            
+            <div class="form-group row">
+                <label class="col-md-4">Pneu Traseiro Direito:</label>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input type="checkbox" class="form-check-input" id="tdireito" name="tdireito0">
+                            <label class="form-check-label mb-0">OK</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tdireito" name="tdireito1">
+                        <label class="form-check-label mb-0">Gasto</label>
+                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tdireito" name="tdireito2">
+                        <label class="form-check-label mb-0">Rachado</label>
+                        <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
+                            id="tdireito" name="tdireito3">
+                        <label class="form-check-label mb-0">Deformado</label>
+                    </div>
+                </div>       
+            </div>    
+
+            <div class="form-group row">
+                <label class="col-md-4">Condições Gerais de Limpeza (Garfos, Grades e tec...)</label>
+                    <div class="col-sm-6">
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-input" id="limpeza" name="limpeza1">
+                                <label class="form-check-label mb-0" for="">SIM</label>
+                                <input type="checkbox" style="margin-left: 6px;" class="form-check-input"
+                                id="limpeza" name="limpeza2">
+                            <label class="form-check-label mb-0" for="">NÃO</label>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" style="margin-top: 8px;" class="col-sm-3 text-end control-label col-form-label">Registrar Anormalidades:</label>
+                <div class="col-sm-9">
+                    <textarea name="anormalidades" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
+            </div>
+
+        
+        <div class="form-group row">
+                <label for="fname"
+                    class="col-md-3 text-end control-label col-form-label">Ordem de Serviço Nº:</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="ordem_servico" style="margin-left: 10px;" placeholder="" name="ordem_servico">
+                </div>
+                <label for="fname"
+                    class="col-md-3 text-end control-label col-form-label">Horimetro:</label>
+                <div class="col-sm-3">
+                    <input type="text" name="horimetro" style="margin-left: 10px;" class="form-control" id="horimetro" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                    class="col-md-3 text-end control-label col-form-label">Descrição do Problema: </label>
+                <div class="col-sm-9">
+                    <input type="text" name="problema" style="margin-left: 10px;" class="form-control" id="problema" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                    class="col-md-3 text-end control-label col-form-label">Serviços Executados: </label>
+                <div class="col-sm-9">
+                    <input type="text" name="servicos" style="margin-left: 10px;" class="form-control" id="servicos" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"
+                    class="col-md-3 text-end control-label col-form-label">Descrição: </label>
+                <div class="col-sm-9">
+                    <input type="text" name="descricao" class="form-control" style="margin-left: 10px;" id="descricao" placeholder="">
+                </div>
+            </div>
+
+                <div class="form-group row">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Atendimento Inicial:</label>
+                        <div class="col-sm-3">
+                            <input type="text" name="at_inicial" class="form-control" style="margin-left: 10px;" id="at_inicial" placeholder="">
+                        </div>
+                        <label for="fname"
+                        class="col-md-3 text-end control-label col-form-label">Atendimento Final: </label>
+                        <div class="col-sm-3">
+                            <input type="text" name="at_final" style="margin-left: 10px;" class="form-control" id="at_final" placeholder="">
+                        </div>
+                </div>
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

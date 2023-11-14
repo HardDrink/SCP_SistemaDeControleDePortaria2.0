@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/../intranetPOO/Assets/images/favicon.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/../intranetPOO/Assets/extra-libs/multicheck/multicheck.css">
+    <link  href="/../intranetPOO/Assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link  href="/../intranetPOO/Dist/css/style.min.css" rel="stylesheet">
+    <script src="/../intranetPOO/Assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/matrix.interface.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/excanvas.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot/jquery.flot.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/jquery.peity.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/matrix.charts.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/jquery.flot.pie.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="/../intranetPOO/Assets/libs/chart/turning-series.js"></script>
+    <script src="/../intranetPOO/Assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="/../intranetPOO/Assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="/../intranetPOO/Assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="/../intranetPOO/Assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="/../intranetPOO/Dist/js/waves.js"></script>
+    <script src="/../intranetPOO/Dist/js/sidebarmenu.js"></script>
+    <script src="/../intranetPOO/Dist/js/custom.min.js"></script>
+    <script src="/../intranetPOO/Dist/js/pages/chart/chart-page-init.js"></script>
+    </head>
+
+<!-- Topo da Pagina-->
+<title>Lista Ramais</title>
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="?pagina=home">
+                        <!-- Logo icon -->
+                        <b class="logo-icon ps-2">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="/../intranetPOO/Assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+            
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="/../intranetPOO/Assets/images/logocragea-branco.jpg" style="width: 110px;margin-left: 15px;" alt="homepage" class="light-logo" />
+            
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- Inicio Menu Superior \/ -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item d-none d-lg-block"><a
+                                class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
+                                data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- create new -->
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="d-none d-md-block">Configurações <i class="fa fa-angle-down"></i></span>
+                                <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class='dropdown-item' href='/usuario'>Lista Usuários</a></li>
+                                            <li><a class='dropdown-item' href='criarusuario.php'>Criar Usuários</a></li>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
+                                href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Pesquisar"> <a
+                                    class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-end">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- menu do create new-->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- menu do usuario canto superior direito -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/../intranetPOO/Assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="alterarsenha.php"><i class="ti-settings me-1 ms-1"></i> Alterar Senha</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="logout.php"><i class="fa fa-power-off me-1 ms-1"></i> Deslogar</a>
+                            </ul>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Fim Menu Superior-->
+
+
+            <!-- Inicio Menu Laretal-->
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="pt-4">
+                        <!-- Aqui Começa o menu lateral -->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                    href="?pagina=home" aria-expanded="false"><i class="mdi mdi-home-outline"></i><span
+                                        class="hide-menu">Home</span></a>
+                                </li>
+        
+                                <li class='sidebar-item'> 
+                                <a class='sidebar-link has-arrow waves-effect waves-dark'
+                                href='javascript:void(0)' aria-expanded='false'><i class='mdi mdi-account-settings-variant'></i><span
+                                    class='hide-menu'>Operacional</span></a>
+        
+                                        <ul aria-expanded="false" class="collapse  first-level">
+        
+                                        <li class='sidebar-item'> 
+                                            <a class='sidebar-link has-arrow waves-effect waves-dark' href='javascript:void(0)' aria-expanded='false'>
+                                                <i class='mdi mdi-ferry'></i>
+                                            <span class='hide-menu'>Empilhadeiras</span></a>
+        
+                                                <ul aria-expanded="false" class="collapse  first-level">
+        
+                                                <li class="sidebar-item"><a href="?pagina=cadastro_empi" class="sidebar-link">
+                                                    <i class="mdi mdi-pencil-box"></i>
+                                                    <span class="hide-menu"> Cadastrar Empilhadeira
+                                                    </span></a>
+                                                </li>
+        
+                                                <li class="sidebar-item">
+                                                    <a href="?pagina=listaempi" class="sidebar-link">
+                                                        <i class="mdi mdi-account-card-details"></i>
+                                                        <span class="hide-menu"> Lista Empilhadeiras</span></a>
+                                                </li>
+                                        </span></a></li>
+                                        </ul>
+        
+        
+                                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-walk"></i><span
+                                                class="hide-menu">Operadores</span></a>
+                                        <ul aria-expanded="false" class="collapse  first-level">
+                                            <li class="sidebar-item"><a href="?pagina=cadastro_operador" class="sidebar-link"><i
+                                                        class="mdi mdi-pencil-box"></i><span class="hide-menu"> Cadastrar Operadores
+                                        </span></a></li>
+                                                    <li class='sidebar-item'><a href='?pagina=listaoperador' class='sidebar-link'><i
+                                                        class='mdi mdi-seat-recline-extra'></i><span class='hide-menu'> Lista Operador
+                                                    </span></a></li>
+                                        </span></a></li>
+                                        </ul>
+        
+        
+                                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                            href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-folder-multiple-outline"></i><span
+                                                class="hide-menu">Controle</span></a>
+                                        <ul aria-expanded="false" class="collapse  first-level">
+                                            <li class="sidebar-item"><a href="?pagina=c_combustao" class="sidebar-link"><i
+                                                        class="mdi mdi-gas-station"></i><span class="hide-menu"> Controle - Combustão
+                                                    </span></a></li>
+                                            <li class="sidebar-item"><a href="?pagina=c_eletrica" class="sidebar-link"><i
+                                                        class="mdi mdi-battery-charging-100"></i><span class="hide-menu"> Controle - Elétrica
+                                                    </span></a></li>
+                                            <li class="sidebar-item"><a href="?pagina=c_grandeporte" class="sidebar-link"><i
+                                                class="mdi mdi-bus"></i><span class="hide-menu"> Controle - Grande Porte
+                                                    </span></a></li>
+                                        </span></a></li>
+                                    </ul>
+        
+                                    <li class="sidebar-item"><a href="?pagina=relatorioempi" class="sidebar-link"><i
+                                    class="mdi mdi-file-outline"></i><span class="hide-menu"> Relatorio Empilhadeiras
+                                        </span></a></li>
+                            </li>
+                                </ul>
+        
+                                <li class="sidebar-item"> 
+                                    <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                    href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-security-home"></i><span
+                                        class="hide-menu">Portaria</span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+
+                                            <li class='sidebar-item'><a href='?pagina=cadastropessoa' class='sidebar-link'><i
+                                                class='mdi mdi-pencil-box'></i><span class='hide-menu'> Cadastrar Pessoa
+                                            </span></a></li>
+
+                                            <li class='sidebar-item'><a href='?pagina=listavisita' class='sidebar-link'><i
+                                                class='mdi mdi-pencil-box'></i><span class='hide-menu'> Lista Pessoas
+                                            </span></a></li>
+
+                                    <li class='sidebar-item'><a href='?pagina=entradavisita' class='sidebar-link'><i
+                                        class='mdi mdi-run'></i><span class='hide-menu'> Entrada Visitante
+                                            </span></a></li>
+
+                                    <li class="sidebar-item"><a href="?pagina=visitaativa" class="sidebar-link"><i
+                                        class="mdi mdi-note-plus"></i><span class="hide-menu"> Visitantes Ativos
+                                            </span></a></li>
+
+                                    <!-- Apenas Supervisores e Chefes podem ver isso \/-->
+                                        <li class='sidebar-item'><a href='?pagina=bloqueio' class='sidebar-link'><i
+                                        class='mdi mdi-lock-open-outline'></i><span class='hide-menu'> Bloqueio De Visitantes
+                                            </span></a></li>
+        
+                                    <li class="sidebar-item"><a href="?pagina=relatoriovisita" class="sidebar-link"><i
+                                        class="mdi mdi-file-outline"></i><span class="hide-menu"> Relatorio Visitantes
+                                            </span></a></li>
+                                </span></a></li>
+                                </ul>
+        
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                    href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                class="hide-menu">Outros</span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="?pagina=ramal" class="sidebar-link"><i
+                                        class="mdi mdi-phone-classic"></i><span class="hide-menu"> Lista Ramais
+                                    </span></a></li>
+                                
+                                    <li class='sidebar-item'><a href='?pagina=grafico' class='sidebar-link'><i
+                                        class='mdi mdi-chart-bar'></i><span class='hide-menu'> Gerar Gráficos
+                                    </span></a></li>
+                                <li class="sidebar-item"><a href="?pagina=relatoriovisita" class="sidebar-link"><i
+                                        class="mdi mdi-file-outline"></i><span class="hide-menu"> Relatório Visita
+                                    </span></a></li>
+                                <li class="sidebar-item"><a href="http://webmail.cragea.com.br/" class="sidebar-link" target="_blank"><i
+                                        class="mdi mdi-gmail"></i><span class="hide-menu"> WebMail
+                                    </span></a></li>
+                        </ul>
+                    </li>
+        
+        
+                            
+                            </ul>
+                        </li>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+
+        <!-- Final Menu Lateral-->
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        {{conteudo}}
+                        </div>
+                    </div>
+                </div>
+<!-- final da pagina -->
+
+<!-- Inicio Footer -->
+        <footer class="footer text-center">
+            <div class="col-12" id="footer-top">
+                <div class="row justify-content-between">
+                <div class="col-4">
+                    <h2>
+                        <img src="/../intranetPOO/Assets/images/logocragea-branco.jpg" style="width: 150px;margin-left: 15px;" alt="homepage" class="light-logo" />
+                    </h2>
+                </div>
+                <div class="col-8" id="social-icons">
+                    <a> Rodovia SP62 (Estrada Velha Rio / SP + Km 103) - S/N° - CEP: 12247-970 </a><br>
+                    <a> Distrito Eugênio de Melo - São José Dos Campos - SP </a><br>
+                    <a> Fone (12) 3908-6800 </a>
+                </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Final Footer-->
+            </div>
+            <script>
+                // datatable start
+                    $('#zero_config').DataTable();
+                </script>
+</html>
