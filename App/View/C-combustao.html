@@ -3,22 +3,22 @@
     <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Controle Diário de Equipamento - Combustão</h5>
         <br>
-            <form method="post" action="?pagina=c_combustao&metodo=insert">
+        <form method="post" action="?pagina=c_combustao&metodo=insert">
 
                 <div class="form-group row">
                     <label for="fname"class="col-md-2 text-end control-label col-form-label">Turno: </label>
                         <div class="col-lg-3">
-                            <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                                    <option value="0">Escolha o Turno...</option>
+                            <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                                    <option value="">Escolha o Turno...</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                             </select>
                         </div>
                         <label class="col-md-1"></label>
-                            <label for="fname"class="col-md-1 text-end control-label col-form-label">Data:</label>
+                            <label for="fname"class="col-md-1 text-end control-label col-form-label">Data: *</label>
                                 <div class="col-lg-3">
-                                    <input type="date" style="margin-left: 10px;" name="data" class="form-control" id="datepicker-autoclose">
+                                    <input type="date" style="margin-left: 10px;" name="data1" class="form-control" id="datepicker-autoclose" required>
                                 </div>
                 </div>
 
@@ -26,19 +26,19 @@
                     <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
                         <div class="col-lg-3">
                             <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                                    <option value="0">Escolha um Equipamento...</option>
+                                    <option value="">Escolha um Equipamento...</option>
                                     {% for empi in empi %}
-                                    <option value='{{empi.nome_emp}}'>{{empi.nome_emp}}</option>
+                                    <option value="{{empi.id_emp}}">{{empi.nome_emp}}</option>
                                     {% endfor %}
                             </select>
                         </div>
                         <label class="col-md-1"></label>
                             <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
                         <div class="col-lg-3">
-                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                                <option value="0">Escolha um Operador...</option>
-                                {% for opera in opera %}
-                                <option value='{{opera.nome}}'>{{opera.nome}}</option>
+                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                                <option value="">Escolha um Operador...</option>
+                                {% for oper in opera %}
+                                <option value="{{oper.nome}}">{{oper.nome}}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -88,7 +88,7 @@
                     <div class="form-group row">
                         <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Hidráulico: </label>
                             <div class="col-lg-3">
-                                <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="hidraulico" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -97,7 +97,7 @@
                             </div>
                                 <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Motor:</label>
                             <div class="col-lg-3">
-                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -109,7 +109,7 @@
                     <div class="form-group row">
                         <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Transmissão: </label>
                             <div class="col-lg-3">
-                                <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="trasmissao" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -118,7 +118,7 @@
                             </div>
                                 <label for="fname"class="col-md-2 text-end control-label col-form-label">Água do Radiador:</label>
                             <div class="col-lg-3">
-                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="agua" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -130,7 +130,7 @@
                     <div class="form-group row">
                         <label for="fname"class="col-md-2 text-end control-label col-form-label">Freios: </label>
                             <div class="col-lg-3">
-                                <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="freio" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -139,7 +139,7 @@
                             </div>
                                 <label for="fname"class="col-md-2 text-end control-label col-form-label">Mangueiras:</label>
                             <div class="col-lg-3">
-                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="mangueira" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                         <option value="0">Escolha uma Opção...</option>
                                         <option value='OK'>OK</option>
                                         <option value='Vazando'>Vazando</option>
@@ -158,7 +158,7 @@
                 <div class="form-group row">
                     <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Dianteiro Esquerdo: </label>
                         <div class="col-lg-3">
-                            <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <select name="desquerdo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                 <option value="0">Escolha uma Opção...</option>
                                 <option value='OK'>OK</option>
                                 <option value='Com Corte'>Com Corte</option>
@@ -168,7 +168,7 @@
                         </div>
                             <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Dianteiro Direito:</label>
                         <div class="col-lg-3">
-                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <select name="ddireito" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                 <option value="0">Escolha uma Opção...</option>
                                 <option value='OK'>OK</option>
                                 <option value='Com Corte'>Com Corte</option>
@@ -181,7 +181,7 @@
                 <div class="form-group row">
                     <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Traseiro Esquerdo:</label>
                         <div class="col-lg-3">
-                            <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <select name="tesquerdo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                 <option value="0">Escolha uma Opção...</option>
                                 <option value='OK'>OK</option>
                                 <option value='Com Corte'>Com Corte</option>
@@ -191,7 +191,7 @@
                         </div>
                             <label for="fname"class="col-md-3 text-end control-label col-form-label">Pneu Traseiro Direito:</label>
                         <div class="col-lg-3">
-                            <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <select name="tdireito" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                     <option value="0">Escolha uma Opção...</option>
                                     <option value='OK'>OK</option>
                                     <option value='Com Corte'>Com Corte</option>
@@ -204,7 +204,7 @@
                     <div class="form-group row">
                         <label class="col-md-4">Condições Gerais de Limpeza (Garfos, Grades e tec...):</label>
                             <div class="col-sm-6">
-                                <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                                <select name="limpeza" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                                     <option value="0">Escolha uma Opção...</option>
                                     <option value='Limpo'>Limpo</option>
                                     <option value='Sujo'>Sujo</option>
@@ -224,7 +224,7 @@
 </div> 
             <div class="card">
                 <div class="card-body">
-                    
+
                     <div class="form-group row">
                         <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
                     </div>
@@ -278,6 +278,6 @@
                     <div class="card-body">
                         <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
                     </div>
-                </div>
-    </form>
+        </form>
+    </div>
 </div>

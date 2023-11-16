@@ -26,6 +26,20 @@ class C_combustaoController
                 echo $e->getMessage();
             }
     }
+
+    public static function insert()
+    {
+        try{
+        EmpilhaCombustao::insert($_POST);
+
+        echo '<script>alert("Cadastro Realizado")</script>';
+        echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_combustao"</script>';
+        }
+        catch(\Exception $e){
+            echo '<script>alert("'.$e->getMessage().'");</script>';
+            echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_combustao"</script>';
+        }
+    }
 }
 
 

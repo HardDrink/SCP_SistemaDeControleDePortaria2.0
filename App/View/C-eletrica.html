@@ -2,122 +2,110 @@
     <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Controle Diário de Equipamento - Elétrica</h5>
         <br>
-            <form method="post">
+        <form method="post">
 
             <div class="form-group row">
                 <label for="fname"class="col-md-2 text-end control-label col-form-label">Turno: </label>
                     <div class="col-lg-3">
-                        <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                            <option value="0">Escolha o Turno...</option>
+                        <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                                <option value="">Escolha o Turno...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
-                                
+                                <option value="3">3</option>
                         </select>
                     </div>
                     <label class="col-md-1"></label>
-                    <label for="fname"class="col-md-1 text-end control-label col-form-label">Data:</label>
-                    <div class="col-lg-3">
-                        <input type="date" name="data" style="margin-left: 10px;" class="form-control" id="datepicker-autoclose">
-                    </div>
+                        <label for="fname"class="col-md-1 text-end control-label col-form-label">Data: *</label>
+                            <div class="col-lg-3">
+                                <input type="date" style="margin-left: 10px;" name="data1" class="form-control" id="datepicker-autoclose" required>
+                            </div>
             </div>
 
             <div class="form-group row">
                 <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
                     <div class="col-lg-3">
                         <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                            <option value="0">Escolha um Equipamento...</option>
-                                <option value='{$id_emp}'>{$nome_emp}</option>
+                                <option value="">Escolha um Equipamento...</option>
+                                {% for empi in empi %}
+                                <option value="{{empi.id_emp}}">{{empi.nome_emp}}</option>
+                                {% endfor %}
                         </select>
                     </div>
                     <label class="col-md-1"></label>
-                    <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
+                        <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
                     <div class="col-lg-3">
-                        <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
-                            <option value="0">Escolha um Operador...</option>
-                                <option value='{$nome}'>{$nome}</option>
+                        <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                            <option value="">Escolha um Operador...</option>
+                            {% for oper in opera %}
+                            <option value="{{oper.nome}}">{{oper.nome}}</option>
+                            {% endfor %}
                         </select>
                     </div>
             </div>
 
             <div class="form-group row">
-                <label for="fname"class="col-md-2 text-end control-label col-form-label">Horímetro Inícial</label>
-                    <div class="col-sm-3">
+                <label for="fname"class="col-md-3 text-end control-label col-form-label">Horímetro Inícial</label>
+                    <div class="col-sm-2">
                         <input name="hori_inicio" style="margin-left: 10px;" type="text" class="form-control" id="hori_inicio" placeholder="">
                     </div>
-                    <label for="fname"
-                        class="col-md-2 text-end control-label col-form-label">Horímetro Final</label>
-                    <div class="col-sm-3">
-                        <input name="hori_final" type="text" style="margin-left: 10px;" class="form-control" id="hori_final" placeholder="">
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Horímetro Final</label>
+                    <div class="col-sm-2">
+                        <input name="hori_final" style="margin-left: 10px;" type="text" class="form-control" id="hori_final" placeholder="">
                     </div>
             </div>
 
             <div class="form-group row">
-                <label for="fname"
-                    class="col-md-2 text-end control-label col-form-label">Horário inicial do Trabalho</label>
-                <div class="col-sm-3">
-                    <input name="inicio" style="margin-left: 10px;" type="datetime-local" class="form-control" id="inicio" placeholder="">
+                <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário inicial do Trabalho</label>
+                    <div class="col-sm-2">
+                        <input name="inicio" style="margin-left: 10px;" type="time" class="form-control" id="inicio" placeholder="">
+                    </div>
+                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário Final do Trabalho</label>
+                    <div class="col-sm-2">
+                        <input name="final" style="margin-left: 10px;" type="time" class="form-control" id="final" placeholder="">
+                    </div>
+            </div>
+
+    </div>
+</div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group row">
+                <h5 style="text-align: center;">Verificar os Itens Abaixo Por Favor: </h5>
+            </div>
+
+            <div class="form-group row">
+                <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Hidráulico:</label>
+                    <div class="col-lg-3">
+                        <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <option value="">Escolha um...</option>
+                            <option value="OK">OK</option>
+                            <option value="Vazando">Vazando</option>
+                            <option value="Baixo">Baixo</option>
+                        </select>
+                    </div>
+                    <label class="col-md-1"></label>
+                        <label for="fname"class="col-md-2 text-end control-label col-form-label">Água da Bateria: </label>
+                    <div class="col-lg-3">
+                        <select name="agua" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                            <option value="">Escolha um...</option>
+                            <option value="OK">OK</option>
+                            <option value="Vazando">Vazando</option>
+                            <option value="Baixo">Baixo</option>
+                        </select>
+                    </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-md-2">Óleo do Redutor:</label>
+                <div class="col-lg-3">
+                    <select name="redutor" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                        <option value="">Escolha um...</option>
+                        <option value="OK">OK</option>
+                        <option value="Vazando">Vazando</option>
+                        <option value="Baixo">Baixo</option>
+                    </select>
                 </div>
-                <label for="fname"
-                    class="col-md-2 text-end control-label col-form-label">Horário Final do Trabalho</label>
-                <div class="col-sm-3">
-                    <input name="final" style="margin-left: 10px;" type="datetime-local" class="form-control" id="final" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="col-md-9"></div>
-            </div>
-
-            <div class="form-group row">
-                <h5 style="text-align: center;">Verificar os Itens Abaixo Por Favor(Marcar Apenas um De Cada Tipo!):</h5>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-md-3">Óleo Hidráulico:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="oleo" name="oleo1">
-                            <label class="form-check-label mb-0">OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="oleo" name="oleo2">
-                            <label class="form-check-label mb-0">Vazando</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="oleo" name="oleo3">
-                            <label class="form-check-label mb-0">Baixo</label>
-                                
-                        </div>
-                    </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-md-3">Água Bateria:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-input"
-                                id="agua" name="agua1">
-                                <label class="form-check-label mb-0" >OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
-                                id="agua" name="agua2" >
-                            <label class="form-check-label mb-0" >Vazando</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input"
-                                id="agua"  name="agua3" >
-                            <label class="form-check-label mb-0" >Baixo</label>
-                                
-                        </div>
-                    </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-md-3">Óleo do Redutor:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="redutor" name="redutor1">
-                                <label class="form-check-label mb-0">OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="redutor" name="redutor2">
-                            <label class="form-check-label mb-0">Vazando</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="redutor" name="redutor3">
-                            <label class="form-check-label mb-0">Baixo</label>
-                                
-                        </div>
-                    </div>
             </div>
 
             <div class="form-group row">
@@ -125,50 +113,38 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-3">Roda De Tração:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="tracao" name="tracao1">
-                            <label class="form-check-label mb-0">OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="tracao" name="tracao2">
-                            <label class="form-check-label mb-0">Com Corte</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="tracao" name="tracao2">
-                            <label class="form-check-label mb-0">Rachada</label>
-                            <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="tracao" name="tracao3">
-                            <label class="form-check-label mb-0">Trepidando</label>
-                        </div>
-                    </div>
+                <label class="col-md-2">Roda de Tração: </label>
+                <div class="col-lg-3">
+                    <select name="tracao" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                        <option value="">Escolha um...</option>
+                        <option value="OK">OK</option>
+                        <option value="Com Corte">Com Corte</option>
+                        <option value="Rachada">Rachada</option>
+                        <option value="Trepidando">Trepidando</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-md-3">Roda De Carga Direita:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="direita" name="direita1">
-                            <label class="form-check-label mb-0">OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="direita" name="direita2">
-                            <label class="form-check-label mb-0">Com Corte</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="direita" name="direita3">
-                            <label class="form-check-label mb-0">Rachada</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="direita" name="direita4">
-                            <label class="form-check-label mb-0">Trepidando</label>
-                        </div>
+                <label class="col-md-3">Roda de Carga Direita:</label>
+                    <div class="col-lg-3">
+                        <select name="direita" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                            <option value="">Escolha um...</option>
+                            <option value="OK">OK</option>
+                            <option value="Com Corte">Com Corte</option>
+                            <option value="Rachada">Rachada</option>
+                            <option value="Trepidando">Trepidando</option>
+                        </select>
                     </div>
-            </div>
-
-            <div class="form-group row">
-                <label class="col-md-3">Roda De Carga Esquerda:</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                                <input type="checkbox" class="form-check-input" id="esquerda" name="esquerda1">
-                            <label class="form-check-label mb-0">OK</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="esquerda" name="esquerda2">
-                            <label class="form-check-label mb-0">Com Corte</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="esquerda" name="esquerda3">
-                            <label class="form-check-label mb-0">Rachada</label>
-                                <input type="checkbox" style="margin-left: 10px;" class="form-check-input" id="esquerda" name="esquerda4">
-                            <label class="form-check-label mb-0">Trepidando</label>
-                        </div>
+                        <label for="fname"class="col-md-3 text-end control-label col-form-label">Roda de Carga Esquerda: </label>
+                    <div class="col-lg-3">
+                        <select name="esquerda" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                            <option value="">Escolha um...</option>
+                            <option value="OK">OK</option>
+                            <option value="Com Corte">Com Corte</option>
+                            <option value="Rachada">Rachada</option>
+                            <option value="Trepidando">Trepidando</option>
+                        </select>
                     </div>
             </div>
 
@@ -190,7 +166,11 @@
                         <textarea style="margin-left: 10px;" name="anormalidades" class="form-control"></textarea>
                     </div>
             </div>
+    </div>
+</div>
 
+<div class="card">
+    <div class="card-body">
             <div class="form-group row">
                 <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
             </div>
