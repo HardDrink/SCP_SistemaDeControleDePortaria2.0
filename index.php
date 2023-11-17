@@ -6,6 +6,9 @@ require_once 'App/Core/Core.php';
 //<------- Database ----->
 require_once 'Lib/Database/Connection.php';
 
+//<------- Funções Diversas ----->
+require_once 'App/Functions/Alertas.php';
+
 //<------- Models ------->
 require_once 'App/Model/Ramal.php';
 require_once 'App/Model/Listapessoas.php';
@@ -16,6 +19,7 @@ require_once 'App/Model/C_pessoa.php';
 require_once 'App/Model/Entrada.php';
 require_once 'App/Model/Visitaativa.php';
 require_once 'App/Model/C_combusta.php';
+require_once 'App/Model/C_eletrica.php';
 
 
 

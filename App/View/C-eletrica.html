@@ -2,10 +2,10 @@
     <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Controle Diário de Equipamento - Elétrica</h5>
         <br>
-        <form method="post">
+        <form method="post" action="?pagina=c_eletrica&metodo=insert">
 
             <div class="form-group row">
-                <label for="fname"class="col-md-2 text-end control-label col-form-label">Turno: </label>
+                <label class="col-md-2 text-end control-label col-form-label">Turno: </label>
                     <div class="col-lg-3">
                         <select name="turno" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
                                 <option value="">Escolha o Turno...</option>
@@ -15,16 +15,16 @@
                         </select>
                     </div>
                     <label class="col-md-1"></label>
-                        <label for="fname"class="col-md-1 text-end control-label col-form-label">Data: *</label>
+                        <label class="col-md-1 text-end control-label col-form-label">Data: *</label>
                             <div class="col-lg-3">
                                 <input type="date" style="margin-left: 10px;" name="data1" class="form-control" id="datepicker-autoclose" required>
                             </div>
             </div>
 
             <div class="form-group row">
-                <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
+                <label class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
                     <div class="col-lg-3">
-                        <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                        <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
                                 <option value="">Escolha um Equipamento...</option>
                                 {% for empi in empi %}
                                 <option value="{{empi.id_emp}}">{{empi.nome_emp}}</option>
@@ -32,9 +32,9 @@
                         </select>
                     </div>
                     <label class="col-md-1"></label>
-                        <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
+                        <label class="col-md-1 text-end control-label col-form-label">Operador:</label>
                     <div class="col-lg-3">
-                        <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                        <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                             <option value="">Escolha um Operador...</option>
                             {% for oper in opera %}
                             <option value="{{oper.nome}}">{{oper.nome}}</option>
@@ -55,11 +55,11 @@
             </div>
 
             <div class="form-group row">
-                <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário inicial do Trabalho</label>
+                <label class="col-md-3 text-end control-label col-form-label">Horário inicial do Trabalho</label>
                     <div class="col-sm-2">
                         <input name="inicio" style="margin-left: 10px;" type="time" class="form-control" id="inicio" placeholder="">
                     </div>
-                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Horário Final do Trabalho</label>
+                        <label class="col-md-3 text-end control-label col-form-label">Horário Final do Trabalho</label>
                     <div class="col-sm-2">
                         <input name="final" style="margin-left: 10px;" type="time" class="form-control" id="final" placeholder="">
                     </div>
@@ -75,7 +75,7 @@
             </div>
 
             <div class="form-group row">
-                <label for="fname"class="col-md-2 text-end control-label col-form-label">Óleo Hidráulico:</label>
+                <label class="col-md-2">Óleo Hidráulico:</label>
                     <div class="col-lg-3">
                         <select name="oleo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                             <option value="">Escolha um...</option>
@@ -85,9 +85,9 @@
                         </select>
                     </div>
                     <label class="col-md-1"></label>
-                        <label for="fname"class="col-md-2 text-end control-label col-form-label">Água da Bateria: </label>
+                        <label class="col-md-2">Água da Bateria: </label>
                     <div class="col-lg-3">
-                        <select name="agua" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                        <select name="agua" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                             <option value="">Escolha um...</option>
                             <option value="OK">OK</option>
                             <option value="Vazando">Vazando</option>
@@ -99,7 +99,7 @@
             <div class="form-group row">
                 <label class="col-md-2">Óleo do Redutor:</label>
                 <div class="col-lg-3">
-                    <select name="redutor" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                    <select name="redutor" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                         <option value="">Escolha um...</option>
                         <option value="OK">OK</option>
                         <option value="Vazando">Vazando</option>
@@ -113,9 +113,9 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-2">Roda de Tração: </label>
+                <label class="col-md-3">Roda de Tração: </label>
                 <div class="col-lg-3">
-                    <select name="tracao" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                    <select name="tracao" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                         <option value="">Escolha um...</option>
                         <option value="OK">OK</option>
                         <option value="Com Corte">Com Corte</option>
@@ -136,9 +136,9 @@
                             <option value="Trepidando">Trepidando</option>
                         </select>
                     </div>
-                        <label for="fname"class="col-md-3 text-end control-label col-form-label">Roda de Carga Esquerda: </label>
+                        <label class="col-md-3 text-end control-label col-form-label">Roda de Carga Esquerda: </label>
                     <div class="col-lg-3">
-                        <select name="esquerda" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                        <select name="esquerda" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                             <option value="">Escolha um...</option>
                             <option value="OK">OK</option>
                             <option value="Com Corte">Com Corte</option>
@@ -149,19 +149,20 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-md-4">Condições Gerais de Limpeza (Garfos, Grades e tec...)</label>
-                    <div class="col-sm-8">
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="limpeza" name="limpeza1">
-                                <label class="form-check-label mb-0" for="">SIM</label>
-                                <input type="checkbox" style="margin-left: 53px;" class="form-check-input" id="limpeza" name="limpeza2">
-                            <label class="form-check-label mb-0" for="">NÃO</label>
-                        </div>
-                    </div>
+                <label class="col-md-3">Condições Gerais de limpeza(Garfos, Grades e etc...): </label>
+                <div class="col-lg-3">
+                    <select name="limpeza" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                        <option value="">Escolha um...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                        <option value="Limpo">Limpo</option>
+                        <option value="Sujo">Sujo</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form-group row">
-                <label for=""style="margin-top: 8px;" class="col-sm-3 text-end control-label col-form-label">Registrar Anormalidades:</label>
+                <label style="margin-top: 8px;" class="col-sm-3">Registrar Anormalidades:</label>
                     <div class="col-sm-9">
                         <textarea style="margin-left: 10px;" name="anormalidades" class="form-control"></textarea>
                     </div>
