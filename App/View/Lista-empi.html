@@ -22,7 +22,21 @@
                         <td>{{emp.chassi}}</td>
                         <td>{{emp.comb}}</td>
                         <td>{{emp.horimetro}}</td>
-                        <td>{{emp.combustivel}}</td>
+                        {% if emp.combustivel == 4 %}
+                        <td>Gasolina</td>
+                        {% endif %}
+                        {% if emp.combustivel == 3 %}
+                        <td>Elétrica</td>
+                        {% endif %}
+                        {% if emp.combustivel == 2 %}
+                        <td>Diesel</td>
+                        {% endif %}
+                        {% if emp.combustivel == 1 %}
+                        <td>Álcool</td>
+                        {% endif %}
+                        {% if emp.combustivel == 5 %}
+                        <td>Outros</td>
+                        {% endif %}
                         <td><a href='empilhadeira-edit.php?id_emp={$id_emp}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
                         <td><a href='listamanutencao.php?id_emp={$id_emp}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 20px;'></i></a></td>
                         <td><a href='excluirempi.php?id_emp={$id_emp}'><i class='mdi mdi-block-helper' style='font-size:16px;margin-left: 20px;'></i></a></td>
