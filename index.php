@@ -20,6 +20,7 @@ require_once 'App/Model/Entrada.php';
 require_once 'App/Model/Visitaativa.php';
 require_once 'App/Model/C_combusta.php';
 require_once 'App/Model/C_eletrica.php';
+require_once 'App/Model/C_grandeporte.php';
 
 
 

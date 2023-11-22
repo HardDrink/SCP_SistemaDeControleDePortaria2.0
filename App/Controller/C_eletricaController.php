@@ -30,15 +30,10 @@ class C_eletricaController
     {
         try{
         C_eletrica::insert($_POST);
-        //var_dump($_POST);
         Alertas::Sucesso();
-        //echo "<meta http-equiv='refresh' content='1.5; URL='?pagina=c_eletrica''/>";
-        //echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_eletrica"</script>';
-        //echo '<script>alert("Cadastro Realizado")</script>';
         }
         catch(\Exception $e){
             Alertas::Error();
-            //echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_eletrica"</script>';
         }
     }
 
