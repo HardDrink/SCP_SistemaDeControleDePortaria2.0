@@ -12,5 +12,15 @@ class Cadastro_empiController
             $conteudo = $template->render($parametros);
             echo $conteudo;
     }
+
+    public function insert()
+    {
+        try{
+            CadastroEmpi::insert($_POST);
+            Alertas::Sucesso();
+            }catch(\Exception $e){
+                Alertas::Error();
+                }
+    }
 }
 ?>

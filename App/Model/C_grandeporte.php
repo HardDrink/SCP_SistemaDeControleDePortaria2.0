@@ -25,8 +25,8 @@ class EmpilhaGrande
 
         $con = Connection::getConn();
 
-        $sql = "INSERT INTO emp_controle (id_emp,data,turno,operador,hori_inicio,hori_final,inicio,final,hori_abastecimento,quantidade,oleo,motor,transmissao,agua,freio,mangueira,desquerdo,desquerdoi,ddireito,ddireitoi,tesquerdo,tdireito) 
-                                    VALUES (:id,:data,:turno,:operador,:hori_inicio,:hori_final,:inicio,:final,:hori_abastecimento,:quantidade,:oleo,:motor,:transmissao,:agua,:freio,:mangueira,:desquerdo,:desquerdoi,:ddireito,:ddireitoi,:tesquerdo,:tdireito)";
+        $sql = "INSERT INTO emp_controle (id_emp,data,turno,operador,hori_inicio,hori_final,inicio,final,hori_abastecimento,quantidade,oleo,motor,transmissao,agua,freio,mangueira,desquerdo,desquerdoi,ddireito,ddireitoi,tesquerdo,tdireito,limpeza,anormalidades) 
+                                    VALUES (:id,:data,:turno,:operador,:hori_inicio,:hori_final,:inicio,:final,:hori_abastecimento,:quantidade,:oleo,:motor,:transmissao,:agua,:freio,:mangueira,:desquerdo,:desquerdoi,:ddireito,:ddireitoi,:tesquerdo,:tdireito,:limpeza,:anormalidades)";
         
         $stmt = $con->prepare($sql);
 
@@ -52,6 +52,8 @@ class EmpilhaGrande
         $stmt->bindValue(":ddireitoi", $dadosPost["ddireitoi"]);
         $stmt->bindValue(":tesquerdo", $dadosPost["tesquerdo"]);
         $stmt->bindValue(":tdireito", $dadosPost["tdireito"]);
+        $stmt->bindValue(":limpeza", $dadosPost["limpeza"]);
+        $stmt->bindValue(":anormalidades", $dadosPost["anormalidades"]);
 
         $result = $stmt->execute();
 

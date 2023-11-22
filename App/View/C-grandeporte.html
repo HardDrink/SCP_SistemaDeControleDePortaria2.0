@@ -238,7 +238,7 @@
         <div class="form-group row">
             <label for="fname"class="col-md-4 text-end control-label col-form-label">Condições Gerais de Limpeza(Garfos, Grades e etc...): </label>
                 <div class="col-lg-4">
-                    <select name="tesquerdo" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
+                    <select name="limpeza" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                         <option value="">Escolha um...</option>
                             <option value='Sim'>Sim</option>
                             <option value='Nao'>Não</option>
@@ -249,76 +249,17 @@
         </div>
 
             <div class="form-group row">
-                <label for="" style="margin-top: 8px;" class="col-sm-3 text-end control-label col-form-label">Registrar Anormalidades:</label>
+                <label for="" style="margin-top: 8px;" class="col-sm-3">Registrar Anormalidades:</label>
                 <div class="col-sm-9">
-                    <textarea name="anormalidades" class="form-control"></textarea>
+                    <textarea style="margin-left: 10px;" name="anormalidades" class="form-control"></textarea>
                 </div>
             </div>
 
+            <div class="border-top">
+                <div class="card-body">
+                    <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-
-    <div class="card">
-        <div class="card-body">
-
-            <div class="form-group row">
-                <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
-            </div>
-
-        
-        <div class="form-group row">
-                <label for="fname"
-                    class="col-md-3 text-end control-label col-form-label">Ordem de Serviço Nº:</label>
-                <div class="col-sm-3">
-                    <input type="text" class="form-control" id="ordem_servico" style="margin-left: 10px;" placeholder="" name="ordem_servico">
-                </div>
-                <label for="fname"
-                    class="col-md-3 text-end control-label col-form-label">Horimetro:</label>
-                <div class="col-sm-3">
-                    <input type="text" name="horimetro" style="margin-left: 10px;" class="form-control" id="horimetro" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="fname"
-                    class="col-md-3 text-end control-label col-form-label">Descrição do Problema: </label>
-                <div class="col-sm-9">
-                    <input type="text" name="problema" style="margin-left: 10px;" class="form-control" id="problema" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="fname"
-                    class="col-md-3 text-end control-label col-form-label">Serviços Executados: </label>
-                <div class="col-sm-9">
-                    <input type="text" name="servicos" style="margin-left: 10px;" class="form-control" id="servicos" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="fname"
-                    class="col-md-3 text-end control-label col-form-label">Descrição: </label>
-                <div class="col-sm-9">
-                    <input type="text" name="descricao" class="form-control" style="margin-left: 10px;" id="descricao" placeholder="">
-                </div>
-            </div>
-
-                <div class="form-group row">
-                        <label for="fname" class="col-md-3 text-end control-label col-form-label">Atendimento Inicial:</label>
-                        <div class="col-sm-3">
-                            <input type="text" name="at_inicial" class="form-control" style="margin-left: 10px;" id="at_inicial" placeholder="">
-                        </div>
-                        <label for="fname"
-                        class="col-md-3 text-end control-label col-form-label">Atendimento Final: </label>
-                        <div class="col-sm-3">
-                            <input type="text" name="at_final" style="margin-left: 10px;" class="form-control" id="at_final" placeholder="">
-                        </div>
-                </div>
-                <div class="border-top">
-                    <div class="card-body">
-                        <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>

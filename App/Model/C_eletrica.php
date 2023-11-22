@@ -74,15 +74,6 @@ class C_eletrica
         $stmt->bindvalue(":limpeza", $dadosPost['limpeza']);
         $stmt->bindvalue(":anormalidades", $dadosPost['anormalidades']);
 
-        $ordem_servico  = $dadosPost = ['ordem_servico'];
-        $horimetro      = $dadosPost = ['horimetro'];
-        $horimetro      =str_replace(",", ".", $horimetro);
-        $problema       = $dadosPost = ['problema'];
-        $servicos       = $dadosPost = ['servicos'];
-        $descricao      = $dadosPost = ['descricao'];
-        $at_inicial     = $dadosPost = ['at_inicial'];
-        $at_final       = $dadosPost = ['at_final'];
-
         $result = $stmt->execute();
 
         //var_dump($result);

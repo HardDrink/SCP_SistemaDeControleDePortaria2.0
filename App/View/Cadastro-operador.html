@@ -1,12 +1,12 @@
 <div class="card">
-    <form method="post">
+    <form method="post" action="?pagina=cadastro_operador&metodo=insert">
         <div class="card-body">
             <h5 class="card-title" style="text-align: center;">Cadastro De Empilhadeiristas</h5>
             <br>
             <div class="form-group row">
-                    <label for="name" class="col-md-2 text-end control-label col-form-label">Nome: </label>
+                    <label for="name" class="col-md-2 text-end control-label col-form-label">Nome: *</label>
                         <div class="col-sm-3">
-                            <input type="text" style="margin-left: 10px;" class="form-control" name="nome" id="name" placeholder="Insira o nome aqui...">
+                            <input type="text" style="margin-left: 10px;" class="form-control" name="nome" id="name" placeholder="Insira o nome aqui..." required>
                         </div>
             </div>
 

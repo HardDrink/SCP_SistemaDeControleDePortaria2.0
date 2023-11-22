@@ -21,6 +21,8 @@ require_once 'App/Model/Visitaativa.php';
 require_once 'App/Model/C_combusta.php';
 require_once 'App/Model/C_eletrica.php';
 require_once 'App/Model/C_grandeporte.php';
+require_once 'App/Model/C_operador.php';
+require_once 'App/Model/C_empilhadeira.php';
 
 
 
@@ -42,6 +44,7 @@ require_once 'App/Controller/C_eletricaController.php';
 require_once 'App/Controller/C_combustaoController.php';
 require_once 'App/Controller/ListaoperadorController.php';
 require_once 'App/Controller/ListaempiController.php';
+require_once 'App/Controller/C_manutencao.php';
 
 
 require_once 'Vendor/autoload.php';

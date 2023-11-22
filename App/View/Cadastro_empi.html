@@ -3,11 +3,11 @@
         <h5 class="card-title" style="text-align: center;">Cadastro Empilhadeiras</h5>
         <br>
 
-        <form method="post">
+        <form method="post" action="?pagina=cadastro_empi&metodo=insert">
             <div class="form-group row">
-                <label for="fname" class="col-md-2 text-end control-label col-form-label">Nome: </label>
+                <label for="fname" class="col-md-2 text-end control-label col-form-label">Nome: *</label>
                     <div class="col-sm-3">
-                        <input type="text" style="margin-left: 10px;" name="nome_emp" class="form-control" id="fname" value="" placeholder="Insira o nome...">
+                        <input type="text" style="margin-left: 10px;" name="nome_emp" class="form-control" id="fname" value="" placeholder="Insira o nome..." required>
                     </div>
             </div>
 
@@ -22,7 +22,7 @@
             <label for="fname" class="col-md-2 text-end control-label col-form-label">Combustível: </label>
                 <div class="col-sm-3">
                     <select class="select2 form-select shadow-none" name="combustivel" style=" height:36px;margin-left: 10px;">
-                        <option>Escolha Um Tipo ...</option>
+                        <option value="">Escolha Um Tipo ...</option>
                             <option value='1'>Álcool</option>
                             <option value='2'>Diesel</option>
                             <option value='3'>Elétrico</option>
@@ -44,7 +44,7 @@
             <label for="fname" class="col-md-2 text-end control-label col-form-label">Tipo: </label>
                 <div class="col-lg-3">
                     <select class="select2 form-select shadow-none" name="tipo" style="width: 100%; height:36px;margin-left: 10px;">
-                        <option>Escolha Um Tipo...</option>
+                        <option value="">Escolha Um Tipo...</option>
                             <option value='1'>Combustão</option>
                             <option value='2'>Elétrica</option>
                             <option value='3'>Grande Porte</option>

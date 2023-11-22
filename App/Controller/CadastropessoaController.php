@@ -16,7 +16,14 @@ class CadastropessoaController
 
     public function insert()
     {
+        try {
+        Alertas::Sucesso();
         CadastroPessoa::insert($_POST);
+        }
+        catch (\Exception $e) {
+            Alertas::Error();
+            //echo $e->getMessage();
+        }
     }
 }
 

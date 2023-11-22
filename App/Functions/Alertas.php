@@ -17,8 +17,19 @@ class Alertas
         echo "<script>
                 Swal.fire({
                     title: 'Error',
-                    text:  'Algo Deu Errado, Contate Informe o T.I.',
+                    text:  'Algo Deu Errado,Informe o T.I.',
                     icon:  'error'
+                });
+              </script>";
+    }
+
+    public static function Igual()
+    {
+        echo "<script>
+                Swal.fire({
+                    title: 'Error',
+                    text:  'Cpf ja Cadastrado No Sistema',
+                    icon:  'warning'
                 });
               </script>";
     }

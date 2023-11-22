@@ -13,6 +13,17 @@ class Cadastro_operadorController
             $conteudo = $template->render($parametros);
             echo $conteudo;
     }
+
+    public function insert()
+    {
+        try {
+        CadastroOperador::insert($_POST);
+        Alertas::Sucesso();
+
+        } catch (\Exception $e) {
+            Alertas::Error();
+        }
+    }
 }
 
 

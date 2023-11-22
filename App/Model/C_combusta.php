@@ -69,35 +69,7 @@ class EmpilhaCombustao
 
         $anormalidades = $dadosPost = $_POST['anormalidades'];
 
-        if (strlen($anormalidades) == 0 ) $anormalidades="-";
-
-        $ordem_servico  = $dadosPost = ['ordem_servico'];
-        $horimetro      = $dadosPost = ['horimetro'];
-        $horimetro      =str_replace(",", ".", $horimetro);
-        $problema       = $dadosPost = ['problema'];
-        $servicos       = $dadosPost = ['servicos'];
-        $descricao      = $dadosPost = ['descricao'];
-        $at_inicial     = $dadosPost = ['at_inicial'];
-        $at_final       = $dadosPost = ['at_final'];
-
-        $manutencao = "";
-
-        /*if(count($ordem_servico)>0)
-        {
-            $manutencao1  = "Ordem de serviço: ";
-            $manutencao1 .=$ordem_servico;
-        }
-        if(strlen($horimetro)>0)$manutencao      .="Horímetro:$horimetro/ ";
-        if(strlen($problema)>0)$manutencao       .="Problema:$problema/ ";
-        if(strlen($servicos)>0)$manutencao       .="Serviços Executados:$servicos/ ";
-        if(strlen($descricao)>0)$manutencao      .="Descrição:$descricao/ ";
-        if(strlen($at_inicial)>0)$manutencao     .="Horário Inicial:$at_inicial/ ";
-        if(strlen($at_final)>0)$manutencao       .="Horário Final:$at_final";*/
-
-        //if(strlen($manutencao)==0)$manutencao="-";
-
         $stmt->bindValue(":anormalidades",$anormalidades);
-        $stmt->bindValue(":manutencao", $manutencao);
         $result = $stmt->execute();
 
         if($result == 0)
