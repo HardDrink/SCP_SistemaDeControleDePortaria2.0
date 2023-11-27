@@ -19,6 +19,17 @@ class ManutencaoController
         $conteudo = $template->render($parametros);
         echo $conteudo;
     }
+
+    public function insert()
+    {   
+        try{
+            Manutencao::insert($_POST);
+            Alertas::Sucesso();
+            }
+            catch(\Exception $e){
+                Alertas::Error();
+        }
+    }
 }
 
 ?>

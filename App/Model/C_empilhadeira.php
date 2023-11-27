@@ -24,6 +24,50 @@ class CadastroEmpi
         }
         
         }
+
+        public static function buscarEmpi($id)
+        {
+            $con = Connection::getConn();
+            $sql = "SELECT * FROM empilhadeiras WHERE id_emp = :id";
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            
+            return $stmt->fetchObject();
+        }
+        public static function edit($dadosPost)
+        {
+            $con = Connection::getConn();
+            $sql = "UPDATE empilhadeiras SET nome_emp = :nome, chassi = :chassi, combustivel = :combustivel, horimetro = :horimetro, tipo = :tipo WHERE id_emp = :id";
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(":id", $dadosPost["id"]);
+            $stmt->bindValue(":nome", $dadosPost["nome_emp"]);
+            $stmt->bindValue(":chassi", $dadosPost["chassi"]);
+            $stmt->bindValue(":combustivel", $dadosPost["combustivel"]);
+            $stmt->bindValue(":horimetro", $dadosPost["horimetro"]);
+            $stmt->bindValue(":tipo", $dadosPost["tipo"]);
+            $resultdado = $stmt->execute();
+
+            if ($resultdado == 0)
+            {
+                throw new Exception("Não Possivel Alterar!");
+            }
+        }
+
+        public static function delete($id)
+        {
+            $con = Connection::getConn();
+            $sql = "DELETE FROM empilhadeiras WHERE id_emp = :id";
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $resultado = $stmt->execute();
+
+            if ($resultado == 0)
+            {
+                throw new Exception("Não Foi Possivel Deletar");
+            }
+
+        }
 }
 
 ?>

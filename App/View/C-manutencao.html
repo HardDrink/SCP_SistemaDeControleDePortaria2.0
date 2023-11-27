@@ -1,12 +1,12 @@
 <div class="card">
     <div class="card-body">
-
+        <form method="post" action="?pagina=manutencao&metodo=insert">
         <div class="form-group row">
             <h5 style="text-align: center;">Registrar as Manutenções do Equipamento neste Período feitas pelo mecânico:</h5>
         </div>
 
         <div class="form-group row">
-            <label for="fname"class="col-md-2 text-end control-label col-form-label">Equipamento: </label>
+            <label for="fname"class="col-md-3 text-end control-label col-form-label">Equipamento: </label>
                 <div class="col-lg-3">
                     <select name="id_emp" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                             <option value="">Escolha um Equipamento...</option>
@@ -15,10 +15,9 @@
                             {% endfor %}
                     </select>
                 </div>
-                <label class="col-md-1"></label>
-                    <label for="fname"class="col-md-1 text-end control-label col-form-label">Operador:</label>
+                    <label for="fname"class="col-md-3 text-end control-label col-form-label">Operador:</label>
                 <div class="col-lg-3">
-                    <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;" required>
+                    <select name="operador" class="select2 form-select shadow-none" style="width: 100%; height:36px;margin-left: 10px;">
                         <option value="">Escolha um Operador...</option>
                         {% for oper in opera %}
                         <option value="{{oper.nome}}">{{oper.nome}}</option>
@@ -72,10 +71,10 @@
 
 </div>
 
-    <div class="border-top">
-        <div class="card-body">
-            <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+        <div class="border-top">
+            <div class="card-body">
+                <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+            </div>
+    </form>
         </div>
-</form>
-</div>
 </div>

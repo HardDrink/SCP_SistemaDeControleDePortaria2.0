@@ -16,11 +16,17 @@
                     {% for ope in operador %}
                         <tr>
                         <td>{{ope.nome}}</td>
-                        <form method='post'>
-                            <input type='hidden' name='id_empilhadeirista' value='{{ope.id_empilhadeirista}}'/>
+                        <form method='post' action="?pagina=listaoperador&metodo=update">
+                            <input type='hidden' name='id' value='{{ope.id_empilhadeirista}}'/>
                             <td><select name='ativo' id='ativo' class='select2 form-select shadow-none'style='width: 50%; height:36px;'>
-                                    <option value='1'>Sim</option>
+                                {% if ope.ativo == 1 %}
+                                    <option selected value='1'>Sim</option>
                                     <option value='0'>Não</option>
+                                {% else %}
+                                    <option selected value='0'>Não</option>
+                                    <option value='1'>Sim</option>
+                                {% endif %}
+                                
                                 </select>
                         <td><button type='submit' class='btn btn-primary' name='atualizar'>Atualizar</button></form></td>
                         </tr>

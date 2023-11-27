@@ -23,6 +23,7 @@ require_once 'App/Model/C_eletrica.php';
 require_once 'App/Model/C_grandeporte.php';
 require_once 'App/Model/C_operador.php';
 require_once 'App/Model/C_empilhadeira.php';
+require_once 'App/Model/C_manutencao.php';
 
 
 
@@ -44,7 +45,7 @@ require_once 'App/Controller/C_eletricaController.php';
 require_once 'App/Controller/C_combustaoController.php';
 require_once 'App/Controller/ListaoperadorController.php';
 require_once 'App/Controller/ListaempiController.php';
-require_once 'App/Controller/C_manutencao.php';
+require_once 'App/Controller/C_manutencaoController.php';
 
 
 require_once 'Vendor/autoload.php';

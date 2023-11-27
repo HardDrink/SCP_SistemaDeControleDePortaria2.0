@@ -6,7 +6,7 @@ class ListaOperador
     {
         $con = Connection::getConn();
 
-        $sql = "SELECT * FROM emp_empilhadeiristas ORDER BY ativo";
+        $sql = "SELECT * FROM emp_empilhadeiristas ORDER BY ativo DESC";
         $result = $con->prepare($sql);
         $result->execute();
 

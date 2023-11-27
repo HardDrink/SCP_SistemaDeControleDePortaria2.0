@@ -10,7 +10,7 @@ class ListaoperadorController
 
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
-            $template = $twig->load('Listaoperador.html');
+            $template = $twig->load('Lista-operador.html');
 
             $parametros = array();
             $parametros['operador'] = $todos;
@@ -20,6 +20,17 @@ class ListaoperadorController
         }
         catch(\Exception $e){
             echo $e->getMessage();
+        }
+
+    }
+    public function update()
+    {
+        try{
+        CadastroOperador::update($_POST);
+        Alertas::Altera();
+        }
+        catch(\Exception $e){
+            Alertas::Error();
         }
     }
 }

@@ -20,8 +20,6 @@
                         <tr>
                         <td>{{emp.nome_emp}}</td>
                         <td>{{emp.chassi}}</td>
-                        <td>{{emp.comb}}</td>
-                        <td>{{emp.horimetro}}</td>
                         {% if emp.combustivel == 4 %}
                         <td>Gasolina</td>
                         {% endif %}
@@ -37,14 +35,63 @@
                         {% if emp.combustivel == 5 %}
                         <td>Outros</td>
                         {% endif %}
-                        <td><a href='empilhadeira-edit.php?id_emp={$id_emp}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
+                        <td>{{emp.horimetro}}</td>
+                        {% if emp.tipo == 1 %}
+                        <td>Combustão</td>
+                        {% endif %}
+                        {% if emp.tipo == 2 %}
+                        <td>Elétrica</td>
+                        {% endif %}
+                        {% if emp.tipo == 3 %}
+                        <td>Grande Porte</td>
+                        {% endif %}
+                        {% if emp.tipo == 4 %}
+                        <td>Outro</td>
+                        {% endif %}
+                        <td><a href='?pagina=cadastro_empi&metodo=edit&id={{emp.id_emp}}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
                         <td><a href='listamanutencao.php?id_emp={$id_emp}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 20px;'></i></a></td>
-                        <td><a href='excluirempi.php?id_emp={$id_emp}'><i class='mdi mdi-block-helper' style='font-size:16px;margin-left: 20px;'></i></a></td>
-                        </tr>
-                        {% endfor %}
+                        
+                        
+                        <td><button type="button" data-bs-toggle="modal" data-bs-target="#JanelaModal{{emp.id_emp}}" class="btn btn-danger btn-sm text-white">Excluir</button></td>
+                        
+                    </tr>
+                    {% endfor %}
+                    
+                    {% for emp in empi %}
+                    <div id="JanelaModal{{emp.id_emp}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">          
+                                
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Atenção!</h2>
+                                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                        
+                                <div class="modal-body">
+                                    
+                                    <h4>Excluir Empilhadeira - {{emp.nome_emp}}?</h4>
+                                </div>
+            
+                                <div class="modal-footer">
+                                    <button type="button" data-bs-dismiss="modal" class="btn btn-danger text-white">
+                                        Fechar
+                                      </button>
+                                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                                        <a href='?pagina=cadastro_empi&metodo=delete&id={{emp.id_emp}}' style="color: white;">Alterar</a>
+                                        </button>
+                                </div>
+            
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+
                 </tbody>
             </table>
         </div>
+
 
     </div>
 </div>
