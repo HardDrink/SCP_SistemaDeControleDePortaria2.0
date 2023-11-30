@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Manutenções na Empilhadeira: {{nome}}</h5>
+        <div class="table-responsive">
+            <table id="" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th><b>Data</b></th>
+                        <th><b>Operador</b></th>
+                        <th><b>Horímetro</b></th>
+                        <th><b>Anormalidade</b></th>
+                        <th><b>Manutenção</b></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for manu in manu %}
+                        <tr>
+                        <td>{{manu.data}}</td>
+                        <td>{{manu.operador}}</td>
+                        <td>{{manu.horimetro}}</td>
+                        <td>{{manu.anormalidade}}</td>
+                        <td>{{manu.manutencao}}</td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>

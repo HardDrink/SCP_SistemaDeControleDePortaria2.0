@@ -62,6 +62,37 @@ class Alertas
                         });
             </script>";
     }
+
+    public static function na()
+    {
+        echo "<script>
+                Swal.fire({
+                    title: 'Error!!!',
+                    text:  'Não Existe Histórico Dessa Empilhadeira',
+                    icon:  'error'
+                });
+            </script>";
+    }
+
+    public static function cpf()
+    {
+        echo "<script>
+                    Swal.fire({
+                        title: '<strong>Atenção</strong>',
+                        icon: 'info',
+                        html: `Não Existe CPF Cadastrado No Sistema!`,
+                        showCloseButton: true,
+                        showCancelButton: true,
+                        focusConfirm: false,
+                        confirmButtonText: `
+                        <a href='?pagina=cadastropessoa' style='color: white'></i> Adicionar!
+                        `,
+                        confirmButtonAriaLabel: 'Thumbs up, great!',
+                        cancelButtonText: `<a href='?pagina=entradavisita' style='color:white'>Voltar</a>`,
+                        cancelButtonAriaLabel: 'Thumbs down'
+                    });
+    </script>";
+    }
 }
 
 ?>

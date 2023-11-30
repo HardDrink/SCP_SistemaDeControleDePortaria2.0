@@ -8,6 +8,7 @@ class VisitaativaController
 
             $todos = Visitaativa::selecionaAtivo();
 
+
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('Visitaativa.html');
@@ -22,6 +23,11 @@ class VisitaativaController
         }catch(\Exception $e){
             echo $e->getMessage();
         }
+    }
+
+    public function saida($id)
+    {
+        Visitaativa::saida($id);
     }
 }
 

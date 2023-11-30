@@ -18,6 +18,17 @@ class Visitaativa
         }
         return $resultado;
     }   
+
+    public static function saida($id)
+    {
+        $con = Connection::getConn();
+
+        $sql = "UPDATE portaria_visita SET saida = NOW() WHERE id_visita = :id";
+        $stmt = $con->prepare($sql);
+        $stmt->bindValue(":id", $id);
+        $stmt->execute();
+
+    }
 }
 
 

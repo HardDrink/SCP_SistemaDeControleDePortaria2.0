@@ -2,8 +2,26 @@
 
 class Entrada
 {
-    public static function buscar()
+    public static function buscar($dadosPost)
     {
+        $con = Connection::getConn();
+        $sql = "SELECT * FROM portaria_pessoa WHERE cpf = :cpf";
+        $result = $con->prepare($sql);
+        $result->bindValue(":cpf", $dadosPost["cpf"]);
+        $resultado = $result->execute();
+
+        $resultado1 = $result->fetchObject();
+        
+        if ($resultado1 == false)
+        {
+            throw new Exception("Não Existe Pessoa Cadastrada!");
+        } else
+        {
+            return $resultado1;
+        }
+
+
+
 
     }
     public static function insert($dadosPost)
@@ -30,7 +48,6 @@ class Entrada
         $stmt->bindValue(":observacao", $dadosPost["observacao"]);
 
         $stmt->execute();
-        var_dump($stmt);
     }
 }
 

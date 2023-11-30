@@ -68,6 +68,32 @@ class CadastroEmpi
             }
 
         }
+
+        public static function manutencao($id)
+        {
+            $con = Connection::getConn();
+            $sql = "SELECT * FROM emp_controle WHERE id_emp = :id AND LENGTH (manutencao)>5";
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+
+            $resultado = [];
+
+            while ($row = $stmt->fetch())
+            {
+                $resultado[] = $row;
+            }
+
+            if (!$resultado)
+            {
+                throw new Exception("Não Existe Nenhum Resultado No Banco!!!");
+            }
+
+            return $resultado;
+
+
+    
+        }
 }
 
 ?>

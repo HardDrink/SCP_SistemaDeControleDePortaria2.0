@@ -5,11 +5,11 @@
             <table id="zero_config" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>ID Pessoa</th>
-                        <th>Nome</th>
-                        <th>Ativo</th>
-                        <th>Editar</th>
-                        <th>Deletar</th>
+                        <th><b>ID Pessoa</b></th>
+                        <th><b>Nome     </b></th>
+                        <th><b>Status   </b></th>
+                        <th><b>Editar   </b></th>
+                        <th><b>Deletar  </b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,11 +17,46 @@
                     <tr>
                     <td>{{bloq.id_pes}}</td>
                     <td>{{bloq.nome}}</td>
-                    <td>{{bloq.ativo}}</td>
-                    <td><a href=''><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
-                    <td><a href=''><i class='mdi mdi-block-helper' style='font-size:16px;margin-left: 14px;'></i></a></td>
+                    {% if bloq.ativo == 1 %}
+                        <td>Liberado</td>
+                    {% else %}
+                        <td>Bloqueado</td>
+                    {% endif %}
+                    <td><a href='?pagina=bloqueio&metodo=edit&id={{bloq.id_pes}}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#JanelaModal{{bloq.id_pes}}" class="btn btn-danger btn-sm text-white">Excluir</button></td>
                     </tr>
                     {% endfor %}
+
+                    {% for bloq in bloqueio %}
+                    <div id="JanelaModal{{bloq.id_pes}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">          
+                                
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Atenção!</h2>
+                                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                        
+                                <div class="modal-body">
+                                    
+                                    <h4>Excluir Pessoa - {{bloq.nome}}?</h4>
+                                </div>
+            
+                                <div class="modal-footer">
+                                    <button type="button" data-bs-dismiss="modal" class="btn btn-danger text-white">
+                                        Fechar
+                                      </button>
+                                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                                        <a href='?pagina=bloqueio&metodo=delete&id={{bloq.id_pes}}' style="color: white;">Alterar</a>
+                                        </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
                 </tbody>
             </table>
         </form>

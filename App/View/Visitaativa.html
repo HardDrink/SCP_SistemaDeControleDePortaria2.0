@@ -5,15 +5,14 @@
             <table id="" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                    <th>Entrada</th>
-                    <th>Nome</th>
-                    <th>Empresa</th>
-                    <th>Cliente</th>
-                    <th>Placa</th>
-                    <th>Setor</th>
-                    <th>Observação</th>
-                    <th>Editar</th>
-                    <th>Saída</th>
+                    <th><b>Entrada</b></th>
+                    <th><b>Nome</b></th>
+                    <th><b>Empresa</b></th>
+                    <th><b>Cliente</b></th>
+                    <th><b>Placa</b></th>
+                    <th><b>Setor</b></th>
+                    <th><b>Observação</b></th>
+                    <th><b>Saída</b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,21 +25,51 @@
                     <td>{{ativo.placa_cavalo}}</td>
                     <td>{{ativo.setor}}</td>
                     <td>{{ativo.observacao}}</td>
-                    <form onSubmit=mSg() action='' method='post'>
+                    <form action='' method='post'>
 
                     <input type='hidden' name='id_visita' value='' />
-                    <td><a href='visitaativa-edit.php?id_visita={id_visita}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
-                    
-                    <td><button onclick='msg()' type='submit' class='btn btn-primary' id='' name='enviar'>Saída</button></form></td>
+                    <td><button type="button" data-bs-toggle="modal" data-bs-target="#JanelaModal{{ativo.id_visita}}" class="btn btn-danger btn-sm text-white">Saída</button></td>
                     </tr>  
-                    {% endfor %}                                  
+                    {% endfor %}         
+                    
+                    {% for ativo in ativo %}
+                    <div id="JanelaModal{{ativo.id_visita}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">          
+                                
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Atenção!</h2>
+                                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                        
+                                <div class="modal-body">
+                                    
+                                    <h4><b>Realizar Saída?</b></h4>
+                                    <br>
+                                    <p><b>Nome:</b>   {{ativo.nome_visita}}</p>
+                                    <hr>
+                                    <p><b>Empresa:</b> {{ativo.empresa}}</p>
+                                    <hr>
+                                    <p><b>Cliente:</b> {{ativo.visitado}}</p>
+                                    <hr>
+                                    <p><b>Placa:</b>  {{ativo.placa_cavalo}}</p>
+                                    <hr>
+                                    <p><b>Setor:</b>  {{ativo.setor}}</p>
+                                </div>
+            
+                                <div class="modal-footer">
+                                    <button type="button" data-bs-dismiss="modal" class="btn btn-danger text-white">Sair</button>
+                                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                                        <a href='?pagina=visitaativa&metodo=saida&id={{ativo.id_visita}}' style="color: white;">Realizar Saída</a>
+                                        </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
                 </tbody>
-                <script>
-                    function msg()
-                    {
-                    alert("Saída Feita Com Sucesso!");
-                    }
-                </script>
             </table>
         </div>
 

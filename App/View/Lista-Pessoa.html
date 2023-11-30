@@ -16,14 +16,46 @@
                 <tbody>
                     {% for pes in pessoas %}
                     <tr>
-                        <td>{{pes.nome}}</td>
+                        <td>{{pes.nome |upper}}</td>
                         <td>{{pes.rg}}</td>
                         <td>{{pes.cpf}}</td>
                         <td>{{pes.cnh}}</td>
-                        <td><a href='?pagina=listavisita&id={{pes.id_pes}}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
-                        <td><a href='?pagina=listavisita&id={{pes.id_pes}}'><i class='mdi mdi-block-helper' style='font-size:16px;margin-left: 20px;'></i></a></td>
+                        <td><a href='?pagina=cadastropessoa&metodo=edit&id={{pes.id_pes}}'><i class='mdi mdi-pen' style='font-size:16px;margin-left: 14px;'></i></a></td>
+                        
+                        <td><button type="button" data-bs-toggle="modal" data-bs-target="#JanelaModal{{pes.id_pes}}" class="btn btn-danger btn-sm text-white">Excluir</button></td>
+                        
                     </tr>
                     {% endfor %}
+
+                    {% for pes in pessoas %}
+                    <div id="JanelaModal{{pes.id_pes}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Atenção!</h2>
+                                    <button type="button" class="btn btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <h4>Excluir Pessoa - {{pes.nome|upper}}?</h4>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" data-bs-dismiss="modal" class="btn btn-danger text-white">
+                                        Fechar
+                                      </button>
+                                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#JanelaModal">
+                                        <a href='?pagina=cadastropessoa&metodo=delete&id={{pes.id_pes}}' style="color: white;">Alterar</a>
+                                        </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
                     </tbody>
             </table>
         </div>

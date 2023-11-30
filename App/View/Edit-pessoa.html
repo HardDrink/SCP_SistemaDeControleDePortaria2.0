@@ -1,0 +1,40 @@
+<div class="card">
+    <form method="post" action="?pagina=cadastropessoa&metodo=save">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">Editar Pessoa:</h5>
+                        <br>
+
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Nome: *</label>
+                                <div class="col-sm-5">
+                                    <input type="text" style="margin-left: 10px;" name="nome" class="form-control" id="nome" value="{{nome}}">
+                                    <input type="hidden" name="id" id="id" value="{{id_pes}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">CPF: *</label>
+                                <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="cpf" maxlength="11" class="form-control" id="cpf" value="{{cpf}}">
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">RG: *</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="rg" maxlength="11" class="form-control" id="rg" value="{{rg}}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                        <label class="col-md-2 text-end control-label col-form-label">CNH: </label>
+                                    <div class="col-sm-3">
+                                    <input type="text" style="margin-left: 10px;" name="cnh" maxlength="10" class="form-control" id="cnh" value="{{cnh}}">
+                                </div>
+                            </div>
+                    </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" style="margin-left: 10px;" class="btn btn-primary">Alterar</button>
+                            </div>
+                        </div>
+    </form>
+</div>

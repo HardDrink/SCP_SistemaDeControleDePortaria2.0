@@ -60,5 +60,28 @@ class Cadastro_empiController
         CadastroEmpi::delete($id);
         header('Location:?pagina=listaempi');
     }
+
+    public function manutencao($id)
+    {
+        try{
+            $empi = CadastroEmpi::buscarEmpi($id);
+            $manutencao = CadastroEmpi::manutencao($id);
+
+            $loader = new \Twig\Loader\FilesystemLoader('App/View');
+            $twig = new \Twig\Environment($loader);
+            $template = $twig->load('Manutencao.html');
+
+            $parametros = array();
+            $parametros['manu'] = $manutencao;
+            $parametros['id'] = $empi->id_emp;
+            $parametros['nome'] = $empi->nome_emp;
+
+            $conteudo = $template->render($parametros);
+            echo $conteudo;
+            }
+            catch(\Exception $e){
+                Alertas::na();
+            }
+    }
 }
 ?>
