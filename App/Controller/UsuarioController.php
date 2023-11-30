@@ -18,6 +18,39 @@ class UsuarioController
             echo $conteudo;
 
     }
+
+    public function delete($id)
+    {
+        try{
+            Alertas::Deletar();
+            Usuarios::Deletar($id);
+        }catch(\Exception $e){
+            Alertas::Error();
+        }
+    }
+
+    public function edit($id)
+    {
+        try{
+            $busca = Usuarios::edit($id);        
+                $loader = new \Twig\Loader\FilesystemLoader('App/View');
+                $twig = new \Twig\Environment($loader);
+                $template = $twig->load('Edit-usuario.html');
+
+                $parametros = array();
+                $parametros['id']      = $busca->id;
+                $parametros['nome']    = $busca->nome;
+                $parametros['usuario'] = $busca->usuario;
+                $parametros['email']   = $busca->email;
+                $parametros['tipo']    = $busca->tipo;
+
+                $conteudo = $template->render($parametros);
+                echo $conteudo;
+            }catch(\Exception $e){
+                Alertas::Error();
+            }
+    }
+
 }
 
 

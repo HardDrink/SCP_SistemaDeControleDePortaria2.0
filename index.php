@@ -50,6 +50,7 @@ require_once 'App/Controller/ListaoperadorController.php';
 require_once 'App/Controller/ListaempiController.php';
 require_once 'App/Controller/C_manutencaoController.php';
 require_once 'App/Controller/UsuarioController.php';
+require_once 'App/Controller/C_usuarioController.php';
 
 
 require_once 'Vendor/autoload.php';

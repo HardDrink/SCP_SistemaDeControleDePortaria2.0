@@ -1,0 +1,61 @@
+<div class="card">
+    <form method="post" action="?pagina=C_usuario&metodo=insert">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">Cadastro De Usuário:</h5>
+                        <br>
+
+                        <div class="form-group row" style="text-align: center;">
+                            <h5>Por favor insira os Dados Abaixo (os campos com * são o obrigatorios):</h5>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2 text-end control-label col-form-label" required>Nome: *</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="nome" class="form-control" style="margin-left: 10px;" value="" placeholder="Insira o nome..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname"
+                                class="col-md-2 text-end control-label col-form-label" required>Usuário: *</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="usuario" class="form-control" style="margin-left: 10px;" id="usuario" value="" placeholder="Insira o usuario..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="fname"
+                                class="col-md-2 text-end control-label col-form-label">Email:</label>
+                            <div class="col-sm-4">
+                                <input type="email" name="email" class="form-control" style="margin-left: 10px;" value="" id="email" placeholder="Insira o email..." >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                                <label class="col-md-2 text-end control-label col-form-label">Senha:</label>
+                                <div class="col-sm-4">
+                                    <input type="password" name="senha" style="margin-left: 10px;" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                    <div class="form-group row">
+                    <label class="col-md-2 text-end control-label col-form-label">Nivel: </label>
+                        <div class="col-sm-4">
+                            <select class="select2 form-select shadow-none" value="" name="tipo" style=" height:36px;margin-left: 10px;">
+                                    <option value='1'>Administrador</option>
+                                    <option value='2'>Supervisor</option>
+                                    <option value='3'>Jovem Aprendiz</option>
+                                    <option value='4'>Portária</option>
+                                    <option value='5'>Básica</option>
+                                    
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="submit" style="margin-left: 10px;" class="btn btn-primary">Cadastrar</button>
+                            </div>
+                        </div>
+    </form>
+</div>
