@@ -4,6 +4,7 @@ class CadastropessoaController
 {
     public function index()
     {
+        Protect::Protect();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('cadastro-pessoa.html');
@@ -17,19 +18,20 @@ class CadastropessoaController
     public function insert()
     {
         try {
-        Alertas::Sucesso();
-        CadastroPessoa::insert($_POST);
-        }
-        catch (\Exception $e) {
-            Alertas::Error();
-            //echo $e->getMessage();
+            echo "<button class='btn btn-primary'><a href='?pagina=cadastropessoa' style='color: white'>Voltar</button>";
+            Alertas::Sucesso();
+            CadastroPessoa::insert($_POST);
+            }
+            catch (\Exception $e) {
+                Alertas::Error();
+                //echo $e->getMessage();
         }
     }
 
     public function edit($id)
     {
 
-        
+        Protect::Protect();
         $loader = new \Twig\Loader\FilesystemLoader('App/View');
         $twig = new \Twig\Environment($loader);
         
@@ -62,6 +64,7 @@ class CadastropessoaController
     public function delete($id)
     {
         try{
+            echo "<button class='btn btn-primary'><a href='?pagina=listavisita' style='color: white'>Voltar</button>";
             Alertas::Sucesso();
             CadastroPessoa::delete($id);
         }

@@ -6,6 +6,7 @@ class UsuarioController
     public function index()
     {
 
+        Protect::Protect();
         $usu = Usuarios::buscartodos();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
@@ -32,6 +33,7 @@ class UsuarioController
     public function edit($id)
     {
         try{
+            Protect::Protect();
             $busca = Usuarios::edit($id);        
                 $loader = new \Twig\Loader\FilesystemLoader('App/View');
                 $twig = new \Twig\Environment($loader);

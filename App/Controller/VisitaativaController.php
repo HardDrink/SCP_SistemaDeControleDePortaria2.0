@@ -6,6 +6,7 @@ class VisitaativaController
     {
         try{
 
+            Protect::Protect();
             $todos = Visitaativa::selecionaAtivo();
 
 
@@ -27,7 +28,13 @@ class VisitaativaController
 
     public function saida($id)
     {
-        Visitaativa::saida($id);
+        try{
+            Alertas::Sucesso();
+            echo "<button class='btn btn-primary'><a href='?pagina=visitaativa' style='color: white'>Voltar</button>";
+            Visitaativa::saida($id);
+            }catch(\Exception $e){
+                Alertas::Error();
+            }
     }
 }
 

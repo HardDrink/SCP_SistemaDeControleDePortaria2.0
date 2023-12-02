@@ -4,7 +4,7 @@ class C_grandeporteController
 {
     public function index()
     {
-
+        Protect::Protect();
         $operador = EmpilhaCombustao::buscaOperador();
         $empi = EmpilhaGrande::BuscaEmpi();
 
@@ -22,12 +22,14 @@ class C_grandeporteController
     public function insert()
     {
         try{
-        EmpilhaGrande::insert($_POST);
-        Alertas::Sucesso();
-        }
-        catch(\Exception $e){
-            Alertas::Error();
-        }
+
+            echo "<button class='btn btn-primary'><a href='?pagina=c_grandeporte' style='color: white'>Voltar</button>";
+            EmpilhaGrande::insert($_POST);
+            Alertas::Sucesso();
+            }
+            catch(\Exception $e){
+                Alertas::Error();
+            }
     }
 }
 

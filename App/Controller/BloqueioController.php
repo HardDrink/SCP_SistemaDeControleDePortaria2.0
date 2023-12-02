@@ -6,8 +6,9 @@ class BloqueioController
     {
 
         try{
+            Protect::Protect();
             $todos = bloqueioTodos::selecionaTodos();
-            
+            Protect::Protect();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('Bloqueio.html');
@@ -32,6 +33,7 @@ class BloqueioController
 
     public function edit($id)
     {
+        Protect::Protect();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('Edit-pessoa2.html');
@@ -53,7 +55,15 @@ class BloqueioController
 
     public function save($id)
     {
-        bloqueioTodos::save($_POST);
+        try{
+            Alertas::Sucesso();
+            echo "<button class='btn btn-primary'><a href='?pagina=bloqueio' style='color: white'>Voltar</button>";
+            bloqueioTodos::save($_POST);
+            
+            }catch(\Exception $e){
+                Alertas::Error();
+            }
+            
     }
 }
 

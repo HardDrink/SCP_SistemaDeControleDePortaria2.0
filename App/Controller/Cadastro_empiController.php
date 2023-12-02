@@ -2,7 +2,8 @@
 class Cadastro_empiController
 {
     public function index()
-    {
+    {   
+        Protect::Protect();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('Cadastro_empi.html');
@@ -17,6 +18,7 @@ class Cadastro_empiController
     {
         try{
             CadastroEmpi::insert($_POST);
+            echo "<button class='btn btn-primary'><a href='?pagina=cadastro_empi' style='color: white'>Voltar</button>";
             Alertas::Sucesso();
             }catch(\Exception $e){
                 Alertas::Error();
@@ -24,7 +26,7 @@ class Cadastro_empiController
     }
     public function edit($id)
     {
-
+        Protect::Protect();
         $loader = new \Twig\Loader\FilesystemLoader('App/View');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('edit_empi.html');
@@ -46,6 +48,7 @@ class Cadastro_empiController
     public function save($id)
     {
         try {
+            echo "<button class='btn btn-primary'><a href='?pagina=listaempi' style='color: white'>Voltar</button>";
             Alertas::Altera();
             CadastroEmpi::edit($_POST);
             }
@@ -64,6 +67,7 @@ class Cadastro_empiController
     public function manutencao($id)
     {
         try{
+            Protect::Protect();
             $empi = CadastroEmpi::buscarEmpi($id);
             $manutencao = CadastroEmpi::manutencao($id);
 
@@ -80,6 +84,7 @@ class Cadastro_empiController
             echo $conteudo;
             }
             catch(\Exception $e){
+                echo "<button class='btn btn-primary'><a href='?pagina=listaempi' style='color: white'>Voltar</button>";
                 Alertas::na();
             }
     }

@@ -6,6 +6,7 @@ class ListaoperadorController
     {
         try{
 
+            Protect::Protect();
             $todos = ListaOperador::selecionarTodos();
 
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
@@ -26,12 +27,13 @@ class ListaoperadorController
     public function update()
     {
         try{
-        CadastroOperador::update($_POST);
-        Alertas::Altera();
-        }
-        catch(\Exception $e){
-            Alertas::Error();
-        }
+            echo "<button class='btn btn-primary'><a href='?pagina=listaoperador' style='color: white'>Voltar</button>";
+            CadastroOperador::update($_POST);
+            Alertas::Altera();
+            }
+            catch(\Exception $e){
+                Alertas::Error();
+            }
     }
 }
 

@@ -6,6 +6,7 @@ class ListavisitaController
     {
         try{
 
+            Protect::Protect();
                 $todos = ListaPessoas::selecionaTodos();
 
                 $loader = new \Twig\Loader\FilesystemLoader('App/View');

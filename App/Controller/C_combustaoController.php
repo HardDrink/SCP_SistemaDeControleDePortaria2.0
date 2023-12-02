@@ -5,7 +5,7 @@ class C_combustaoController
     public function index()
     {
         try{
-
+            Protect::Protect();
             $opera = EmpilhaCombustao::buscaOperador();
             $busca = EmpilhaCombustao::buscaEmpi();
 
@@ -31,13 +31,11 @@ class C_combustaoController
     {
         try{
         EmpilhaCombustao::insert($_POST);
-
-        echo '<script>alert("Cadastro Realizado")</script>';
-        echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_combustao"</script>';
+        echo "<button class='btn btn-primary'><a href='?pagina=c_combustao' style='color: white'>Voltar</button>";
+            Alertas::Sucesso();
         }
         catch(\Exception $e){
-            echo '<script>alert("'.$e->getMessage().'");</script>';
-            echo '<script>location.href="http://localhost/intranetPOO/?pagina=c_combustao"</script>';
+            Alertas::Error();
         }
     }
 }

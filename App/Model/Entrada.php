@@ -46,8 +46,12 @@ class Entrada
         $stmt->bindValue(":setor", $dadosPost["setor"]);
         $stmt->bindValue(":operacao", $dadosPost["operacao"]);
         $stmt->bindValue(":observacao", $dadosPost["observacao"]);
+        $resultado = $stmt->execute();
 
-        $stmt->execute();
+        if(!$resultado)
+        {
+            throw new Exception("Deu Ruim!");
+        }
     }
 }
 

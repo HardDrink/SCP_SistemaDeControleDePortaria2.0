@@ -40,12 +40,11 @@ class EmpilhaCombustao
     {
         $con = Connection::getConn();
 
-        $sql = "INSERT INTO emp_controle (`id_emp`,`data`,`turno`,`operador`,`hori_inicio`,`hori_final`
-                                            ,`inicio`,`final`,`oleo`,`agua`,`hidraulico`,`transmissao`,`freio`,`mangueira`,
-                                            `desquerdo`,`ddireito`,`tesquerdo`,`tdireito`,`limpeza`,`anormalidades`,`manutencao`) VALUES
+        $sql = "INSERT INTO emp_controle (`id_emp`,`data`,`turno`,`operador`,`hori_inicio`,`hori_final`,`inicio`,`final`,`oleo`,`agua`,`hidraulico`,`transmissao`,`freio`,`mangueira`,
+                                            `desquerdo`,`ddireito`,`tesquerdo`,`tdireito`,`limpeza`) VALUES
                                          (:id, :data1, :turno, :operador, :hori_inicio, :hori_final, :inicio, :final, :oleo, :agua, :hidraulico, 
                                          :transmissao, :freio, :mangueira, :desquerdo, :ddireito, :tesquerdo, :tdireito, 
-                                         :limpeza, :anormalidades, :manutencao)";
+                                         :limpeza)";
         $stmt = $con->prepare($sql);
         $stmt->bindValue(":id", $dadosPost["id_emp"]);
         $stmt->bindValue(":data1", $dadosPost["data1"]);
@@ -67,9 +66,6 @@ class EmpilhaCombustao
         $stmt->bindValue(":tdireito", $dadosPost["tdireito"]);
         $stmt->bindValue(":limpeza", $dadosPost["limpeza"]);
 
-        $anormalidades = $dadosPost = $_POST['anormalidades'];
-
-        $stmt->bindValue(":anormalidades",$anormalidades);
         $result = $stmt->execute();
 
         if($result == 0)

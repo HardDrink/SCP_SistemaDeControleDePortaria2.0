@@ -110,6 +110,11 @@ class Usuarios
 
     }
 
+    public static function alterarSenha($id)
+    {
+        
+    }
+
 }
 
 ?>

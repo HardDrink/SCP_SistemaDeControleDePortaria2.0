@@ -4,6 +4,7 @@ use Twig\Extra\Intl\IntlExtension;
 
 //<------- Core -------->
 require_once 'App/Core/Core.php';
+require_once 'App/Core/Protect.php';
 
 //<------- Database ----->
 require_once 'Lib/Database/Connection.php';
@@ -27,11 +28,13 @@ require_once 'App/Model/C_operador.php';
 require_once 'App/Model/C_empilhadeira.php';
 require_once 'App/Model/C_manutencao.php';
 require_once 'App/Model/Usuario.php';
+require_once 'App/Model/Login.php';
 
 
 
 // <------ Controllers -------->
 require_once 'App/Controller/HomeController.php';
+require_once 'App/Controller/ErroController.php';
 require_once 'App/Controller/RamalController.php';
 require_once 'App/Controller/GraficoController.php';
 require_once 'App/Controller/RelatoriovisitaController.php';
@@ -51,6 +54,8 @@ require_once 'App/Controller/ListaempiController.php';
 require_once 'App/Controller/C_manutencaoController.php';
 require_once 'App/Controller/UsuarioController.php';
 require_once 'App/Controller/C_usuarioController.php';
+require_once 'App/Controller/AlterarsenhaController.php';
+require_once 'App/Controller/LoginController.php';
 
 
 require_once 'Vendor/autoload.php';
@@ -64,9 +69,18 @@ ob_start();
     $saida = ob_get_contents();
 ob_end_clean();
 
-$tplPronto = str_replace('{{conteudo}}', $saida , $template);
 
+$url = array_values($_GET);
 
-echo $tplPronto;
+if($url[0] == "login")
+{
+    echo $saida;
+}
+else
+{
+    $tplPronto = str_replace('{{conteudo}}', $saida , $template);
+    echo $tplPronto;
+}
+
 
 ?>

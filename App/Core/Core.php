@@ -5,6 +5,7 @@ class Core
 
     public function start($urlGet)
     {
+
         if(isset($urlGet['metodo'])) {
             $acao = $urlGet['metodo'];
         } else {
@@ -28,12 +29,7 @@ class Core
         }else {
             $id = null;
         }
-        if (isset($urlGet['cpf']) && $urlGet['cpf'] != null) {
-            $cpf = $urlGet['cpf'];
-        }else {
-            $cpf = null;
-        }
-
+        
         call_user_func_array(array(new $controller, $acao), array($id));
     }
 }

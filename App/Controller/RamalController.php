@@ -6,6 +6,7 @@ class RamalController
     {
         try{
             
+            Protect::Protect();
             $todos = Ramal::selecionaTodos();
             
             $loader = new \Twig\Loader\FilesystemLoader('App/View');

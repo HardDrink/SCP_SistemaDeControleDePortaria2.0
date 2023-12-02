@@ -4,6 +4,7 @@ class ManutencaoController
 {
     public function index()
     {
+        Protect::Protect();
         $buscaempi     = EmpilhaCombustao::buscaEmpi();
         $buscaoperador = EmpilhaCombustao::buscaOperador();
 
@@ -23,12 +24,13 @@ class ManutencaoController
     public function insert()
     {   
         try{
+            echo "<button class='btn btn-primary'><a href='?pagina=manutencao' style='color: white'>Voltar</button>";
             Manutencao::insert($_POST);
             Alertas::Sucesso();
             }
             catch(\Exception $e){
                 Alertas::Error();
-        }
+            }
     }
 }
 

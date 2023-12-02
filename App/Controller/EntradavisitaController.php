@@ -4,6 +4,7 @@ class EntradavisitaController
 {
     public function index()
     {
+        Protect::Protect();
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('Entradavisita.html');
@@ -18,6 +19,7 @@ class EntradavisitaController
     {
 
         try {    
+            Protect::Protect();
             $busca = Entrada::buscar($_POST);
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
@@ -43,8 +45,13 @@ class EntradavisitaController
     
     public function insert()
     {
-        //var_dump($_POST);
-        Entrada::insert($_POST);
+        try{
+            echo "<button class='btn btn-primary'><a href='?pagina=entradavisita' style='color: white'>Voltar</button>";
+            Entrada::insert($_POST);
+            Alertas::Sucesso();
+            }catch (\Exception $e) {
+                Alertas::Error();
+            }
     }
 }
 

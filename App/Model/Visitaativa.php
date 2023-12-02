@@ -26,7 +26,14 @@ class Visitaativa
         $sql = "UPDATE portaria_visita SET saida = NOW() WHERE id_visita = :id";
         $stmt = $con->prepare($sql);
         $stmt->bindValue(":id", $id);
-        $stmt->execute();
+        $resultado = $stmt->execute();
+
+        if(!$resultado)
+        {
+            throw new Exception("Deu Ruim!");
+        }
+
+
 
     }
 }
