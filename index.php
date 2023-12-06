@@ -29,6 +29,7 @@ require_once 'App/Model/C_empilhadeira.php';
 require_once 'App/Model/C_manutencao.php';
 require_once 'App/Model/Usuario.php';
 require_once 'App/Model/Login.php';
+require_once 'App/Model/Relatorios.php';
 
 
 
@@ -56,6 +57,8 @@ require_once 'App/Controller/UsuarioController.php';
 require_once 'App/Controller/C_usuarioController.php';
 require_once 'App/Controller/AlterarsenhaController.php';
 require_once 'App/Controller/LoginController.php';
+require_once 'App/Controller/RelatorioController.php';
+require_once 'App/Controller/RelatoriovController.php';
 
 
 require_once 'Vendor/autoload.php';
@@ -72,7 +75,7 @@ ob_end_clean();
 
 $url = array_values($_GET);
 
-if($url[0] == "login")
+if($url[0] == "login" || $url[0] == "relatorio" || $url[0] == "relatoriov")
 {
     echo $saida;
 }

@@ -26,6 +26,7 @@ class EntradavisitaController
             $template = $twig->load('Entradavisita1.html');
 
             $parametros = array();
+            $parametros['id_pes'] = $busca->id_pes;
             $parametros['nome'] = $busca->nome;
             $parametros['cpf'] = $busca->cpf;
             $parametros['rg'] = $busca->rg;
@@ -50,7 +51,7 @@ class EntradavisitaController
             Entrada::insert($_POST);
             Alertas::Sucesso();
             }catch (\Exception $e) {
-                Alertas::Error();
+                $e->getMessage();
             }
     }
 }

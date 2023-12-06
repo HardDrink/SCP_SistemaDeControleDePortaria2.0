@@ -1,23 +1,25 @@
 <?php
 
-class RelatorioempiController
+class RelatorioController
 {
+
     public function index()
     {
-        Protect::Protect();
-            $empi = Relatorios::selecionaTodos();
+
+        $empi  = Relatorios::RelatorioEmpi($_POST);
+        //$busca = Relatorios::selecionaTodos();
+
             $loader = new \Twig\Loader\FilesystemLoader('App/View');
             $twig = new \Twig\Environment($loader);
-            $template = $twig->load('Relatorio-empi.html');
-
+            $template = $twig->load('Relatorios.html');
+    
             $parametros = array();
             $parametros['empi'] = $empi;
-
+            //$parametros['busca'] = $busca;
+    
             $conteudo = $template->render($parametros);
             echo $conteudo;
     }
-
 }
-
 
 ?>
