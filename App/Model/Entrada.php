@@ -28,14 +28,30 @@ class Entrada
     {
         $con = Connection::getConn();
 
-        $sql = "INSERT INTO portaria_visitante (id_pes, placa_cavalo, placa_1, placa_2, veiculo, empresa , entrada, visitado, setor, operacao, observacao)
-                                    VALUES (:id_pes, :placa_cavalo, :placa_1, :placa_2, :veiculo, :empresa, NOW(), :visitado, :setor, :operacao, :observacao)";
+        $placa = $dadosPost['placa_cavalo'];
+        $placa1 = $dadosPost['placa_1'];
+        $placa2 = $dadosPost['placa_2'];
+
+        $sql = "INSERT INTO portaria_veiculo (placa_veic, placa1, placa2) VALUES (:placa, :placa1, :placa2)";
+        $stmt = $con->prepare($sql);
+        $stmt->bindValue(":placa", $placa);
+        $stmt->bindValue(":placa1", $placa1);
+        $stmt->bindValue(":placa2", $placa2);
+        $stmt->execute();
+
+        $sql = "SELECT * FROM portaria_veiculo WHERE placa_veic = :placa3";
+        $stmt = $con->prepare($sql);
+        $stmt->bindValue(":placa3", $placa);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        $id = $row['id_veic'];
+
+        $sql = "INSERT INTO portaria_visitante (id_pes, id_veic, veiculo, empresa , entrada, visitado, setor, operacao, observacao)
+                                    VALUES (:id_pes, :id_veic, :veiculo, :empresa, NOW(), :visitado, :setor, :operacao, :observacao)";
     
         $stmt = $con->prepare($sql);
         $stmt->bindValue(":id_pes", $dadosPost["id_pessoa"]);
-        $stmt->bindValue(":placa_cavalo", $dadosPost["placa_cavalo"]);
-        $stmt->bindValue(":placa_1", $dadosPost["placa_1"]);
-        $stmt->bindValue(":placa_2", $dadosPost["placa_2"]);
+        $stmt->bindValue(":id_veic", $id);
         $stmt->bindValue(":veiculo", $dadosPost["veiculo"]);
         $stmt->bindValue(":empresa", $dadosPost["empresa"]);
         $stmt->bindValue(":visitado", $dadosPost["visitado"]);

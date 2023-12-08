@@ -78,18 +78,29 @@
                                                 <tr>
                                                 <td style='font-size: 14px;'>{{opa.entrada|date("d/m/Y H:i:s")}}</td>
                                                 <td style='font-size: 14px;'>{{opa.saida|date("d/m/Y H:i:s")}}</td>
-                                                <td style='font-size: 14px;'>{{opa.nome}}</td>
+                                                <td style='font-size: 14px;'>{{opa.nome |upper}}</td>
                                                 <td style='font-size: 14px;'>{{opa.cpf}}</td>
                                                 <td style='font-size: 14px;'>{{opa.empresa}}</td>
                                                 <td style='font-size: 14px;'>{{opa.visitado}}</td>
-                                                {% if opa.placa_veic == null %}
-                                                <td style='font-size: 14px;'>{{opa.placa_cavalo}}</td>
+                                                <td style='font-size: 14px;'>{{opa.placa_veic |upper}}</td>
+                                                <td style='font-size: 14px;'>{{opa.placa1 |upper}}</td>
+                                                <td style='font-size: 14px;'>{{opa.placa2 |upper}}</td>
+
+                                                {% if opa.setor == 1 %}
+                                                <td style='font-size: 14px;'>Administrativo</td>
+                                                {% elseif opa.setor == 2 %}
+                                                <td style='font-size: 14px;'>Operacional</td>
+                                                {% elseif opa.setor == 3 %}
+                                                <td style='font-size: 14px;'>...</td>
+                                                {% elseif opa.setor == 4 %}
+                                                <td style='font-size: 14px;'>Pátio</td>
+                                                {% elseif opa.setor == 5 %}
+                                                <td style='font-size: 14px;'>Refeitório</td>
+                                                {% elseif opa.setor == 0 %}
+                                                <td style='font-size: 14px;'>...</td>
                                                 {% else %}
-                                                <td style='font-size: 14px;'>{{opa.placa_veic}}</td>
-                                                {% endif %}
-                                                <td style='font-size: 14px;'>{{opa.placa_1}}</td>
-                                                <td style='font-size: 14px;'>{{opa.placa_2}}</td>
                                                 <td style='font-size: 14px;'>{{opa.setor}}</td>
+                                                {% endif %}
                                                 <td style='font-size: 14px;'>{{opa.operacao}}</td>
                                                 <td style='font-size: 14px;'>{{opa.observacao}}</td>
                                             </tr>

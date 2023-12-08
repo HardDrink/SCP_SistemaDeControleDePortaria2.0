@@ -51,7 +51,7 @@ class EntradavisitaController
             Entrada::insert($_POST);
             Alertas::Sucesso();
             }catch (\Exception $e) {
-                $e->getMessage();
+                Alertas::Error();
             }
     }
 }

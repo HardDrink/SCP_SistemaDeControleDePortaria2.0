@@ -15,7 +15,6 @@ class RelatoriovController
     
             $conteudo = $template->render($parametros);
             echo $conteudo;
-
     }
 }
 

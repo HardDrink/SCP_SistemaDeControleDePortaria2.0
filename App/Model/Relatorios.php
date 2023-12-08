@@ -74,7 +74,8 @@ class Relatorios
         $sql = "SELECT * FROM portaria_visitante 
                 INNER JOIN portaria_pessoa ON portaria_pessoa.id_pes = portaria_visitante.id_pes
                 INNER JOIN portaria_veiculo ON portaria_veiculo.id_veic = portaria_visitante.id_veic
-                WHERE entrada BETWEEN :inicio AND :final";
+                WHERE entrada BETWEEN :inicio AND :final
+                ORDER BY entrada ASC";
         
         $stmt = $con->prepare($sql,);
         $stmt->bindValue(":inicio", $dadosPost['data_inicio']);
